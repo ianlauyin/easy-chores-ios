@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158E92BEF70110085870B /* easy_choresApp.swift */; };
+		D25158EC2BEF70110085870B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158EB2BEF70110085870B /* ContentView.swift */; };
+		D25158EE2BEF701D0085870B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25158ED2BEF701D0085870B /* Assets.xcassets */; };
+		D25158F12BEF701D0085870B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25158F02BEF701D0085870B /* Preview Assets.xcassets */; };
+		D25158FB2BEF701F0085870B /* easy_choresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158FA2BEF701F0085870B /* easy_choresTests.swift */; };
+		D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159042BEF701F0085870B /* easy_choresUITests.swift */; };
+		D25159072BEF701F0085870B /* easy_choresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D25158F72BEF701F0085870B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D25158DE2BEF70110085870B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D25158E52BEF70110085870B;
+			remoteInfo = "easy-chores";
+		};
+		D25159012BEF701F0085870B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D25158DE2BEF70110085870B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D25158E52BEF70110085870B;
+			remoteInfo = "easy-chores";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D25158E62BEF70110085870B /* easy-chores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "easy-chores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25158E92BEF70110085870B /* easy_choresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresApp.swift; sourceTree = "<group>"; };
+		D25158EB2BEF70110085870B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D25158ED2BEF701D0085870B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D25158F02BEF701D0085870B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D25158F62BEF701F0085870B /* easy-choresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easy-choresTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25158FA2BEF701F0085870B /* easy_choresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresTests.swift; sourceTree = "<group>"; };
+		D25159002BEF701F0085870B /* easy-choresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easy-choresUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25159042BEF701F0085870B /* easy_choresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITests.swift; sourceTree = "<group>"; };
+		D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D25158E32BEF70110085870B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25158F32BEF701F0085870B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25158FD2BEF701F0085870B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D25158DD2BEF70110085870B = {
+			isa = PBXGroup;
+			children = (
+				D25158E82BEF70110085870B /* easy-chores */,
+				D25158F92BEF701F0085870B /* easy-choresTests */,
+				D25159032BEF701F0085870B /* easy-choresUITests */,
+				D25158E72BEF70110085870B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D25158E72BEF70110085870B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D25158E62BEF70110085870B /* easy-chores.app */,
+				D25158F62BEF701F0085870B /* easy-choresTests.xctest */,
+				D25159002BEF701F0085870B /* easy-choresUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D25158E82BEF70110085870B /* easy-chores */ = {
+			isa = PBXGroup;
+			children = (
+				D25158E92BEF70110085870B /* easy_choresApp.swift */,
+				D25158EB2BEF70110085870B /* ContentView.swift */,
+				D25158ED2BEF701D0085870B /* Assets.xcassets */,
+				D25158EF2BEF701D0085870B /* Preview Content */,
+			);
+			path = "easy-chores";
+			sourceTree = "<group>";
+		};
+		D25158EF2BEF701D0085870B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D25158F02BEF701D0085870B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D25158F92BEF701F0085870B /* easy-choresTests */ = {
+			isa = PBXGroup;
+			children = (
+				D25158FA2BEF701F0085870B /* easy_choresTests.swift */,
+			);
+			path = "easy-choresTests";
+			sourceTree = "<group>";
+		};
+		D25159032BEF701F0085870B /* easy-choresUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D25159042BEF701F0085870B /* easy_choresUITests.swift */,
+				D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */,
+			);
+			path = "easy-choresUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D25158E52BEF70110085870B /* easy-chores */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D251590A2BEF701F0085870B /* Build configuration list for PBXNativeTarget "easy-chores" */;
+			buildPhases = (
+				D25158E22BEF70110085870B /* Sources */,
+				D25158E32BEF70110085870B /* Frameworks */,
+				D25158E42BEF70110085870B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "easy-chores";
+			productName = "easy-chores";
+			productReference = D25158E62BEF70110085870B /* easy-chores.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D25158F52BEF701F0085870B /* easy-choresTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D251590D2BEF701F0085870B /* Build configuration list for PBXNativeTarget "easy-choresTests" */;
+			buildPhases = (
+				D25158F22BEF701F0085870B /* Sources */,
+				D25158F32BEF701F0085870B /* Frameworks */,
+				D25158F42BEF701F0085870B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D25158F82BEF701F0085870B /* PBXTargetDependency */,
+			);
+			name = "easy-choresTests";
+			productName = "easy-choresTests";
+			productReference = D25158F62BEF701F0085870B /* easy-choresTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D25158FF2BEF701F0085870B /* easy-choresUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D25159102BEF701F0085870B /* Build configuration list for PBXNativeTarget "easy-choresUITests" */;
+			buildPhases = (
+				D25158FC2BEF701F0085870B /* Sources */,
+				D25158FD2BEF701F0085870B /* Frameworks */,
+				D25158FE2BEF701F0085870B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D25159022BEF701F0085870B /* PBXTargetDependency */,
+			);
+			name = "easy-choresUITests";
+			productName = "easy-choresUITests";
+			productReference = D25159002BEF701F0085870B /* easy-choresUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D25158DE2BEF70110085870B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					D25158E52BEF70110085870B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					D25158F52BEF701F0085870B = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = D25158E52BEF70110085870B;
+					};
+					D25158FF2BEF701F0085870B = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = D25158E52BEF70110085870B;
+					};
+				};
+			};
+			buildConfigurationList = D25158E12BEF70110085870B /* Build configuration list for PBXProject "easy-chores" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D25158DD2BEF70110085870B;
+			packageReferences = (
+				D25159132BEFCF890085870B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
+			productRefGroup = D25158E72BEF70110085870B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D25158E52BEF70110085870B /* easy-chores */,
+				D25158F52BEF701F0085870B /* easy-choresTests */,
+				D25158FF2BEF701F0085870B /* easy-choresUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D25158E42BEF70110085870B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25158F12BEF701D0085870B /* Preview Assets.xcassets in Resources */,
+				D25158EE2BEF701D0085870B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25158F42BEF701F0085870B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25158FE2BEF701F0085870B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D25158E22BEF70110085870B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25158EC2BEF70110085870B /* ContentView.swift in Sources */,
+				D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25158F22BEF701F0085870B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25158FB2BEF701F0085870B /* easy_choresTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25158FC2BEF701F0085870B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25159072BEF701F0085870B /* easy_choresUITestsLaunchTests.swift in Sources */,
+				D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D25158F82BEF701F0085870B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D25158E52BEF70110085870B /* easy-chores */;
+			targetProxy = D25158F72BEF701F0085870B /* PBXContainerItemProxy */;
+		};
+		D25159022BEF701F0085870B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D25158E52BEF70110085870B /* easy-chores */;
+			targetProxy = D25159012BEF701F0085870B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D25159082BEF701F0085870B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D25159092BEF701F0085870B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D251590B2BEF701F0085870B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"easy-chores/Preview Content\"";
+				DEVELOPMENT_TEAM = 4GZR9W59M5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "IanLau.easy-chores";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D251590C2BEF701F0085870B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"easy-chores/Preview Content\"";
+				DEVELOPMENT_TEAM = 4GZR9W59M5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "IanLau.easy-chores";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D251590E2BEF701F0085870B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GZR9W59M5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "IanLau.easy-choresTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/easy-chores.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/easy-chores";
+			};
+			name = Debug;
+		};
+		D251590F2BEF701F0085870B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GZR9W59M5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "IanLau.easy-choresTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/easy-chores.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/easy-chores";
+			};
+			name = Release;
+		};
+		D25159112BEF701F0085870B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GZR9W59M5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "IanLau.easy-choresUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "easy-chores";
+			};
+			name = Debug;
+		};
+		D25159122BEF701F0085870B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GZR9W59M5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "IanLau.easy-choresUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "easy-chores";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D25158E12BEF70110085870B /* Build configuration list for PBXProject "easy-chores" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25159082BEF701F0085870B /* Debug */,
+				D25159092BEF701F0085870B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D251590A2BEF701F0085870B /* Build configuration list for PBXNativeTarget "easy-chores" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D251590B2BEF701F0085870B /* Debug */,
+				D251590C2BEF701F0085870B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D251590D2BEF701F0085870B /* Build configuration list for PBXNativeTarget "easy-choresTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D251590E2BEF701F0085870B /* Debug */,
+				D251590F2BEF701F0085870B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D25159102BEF701F0085870B /* Build configuration list for PBXNativeTarget "easy-choresUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D25159112BEF701F0085870B /* Debug */,
+				D25159122BEF701F0085870B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D25159132BEFCF890085870B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+	};
+	rootObject = D25158DE2BEF70110085870B /* Project object */;
+}
