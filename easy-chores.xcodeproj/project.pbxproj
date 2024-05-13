@@ -94,6 +94,10 @@
 		D25158E82BEF70110085870B /* easy-chores */ = {
 			isa = PBXGroup;
 			children = (
+				D28614EE2BF268E7009D8D24 /* Networking */,
+				D28614ED2BF268B4009D8D24 /* ViewModels */,
+				D28614EC2BF268A6009D8D24 /* Models */,
+				D28614EB2BF26847009D8D24 /* Views */,
 				D25158E92BEF70110085870B /* easy_choresApp.swift */,
 				D25158EB2BEF70110085870B /* ContentView.swift */,
 				D25158ED2BEF701D0085870B /* Assets.xcassets */,
@@ -125,6 +129,34 @@
 				D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */,
 			);
 			path = "easy-choresUITests";
+			sourceTree = "<group>";
+		};
+		D28614EB2BF26847009D8D24 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D28614EC2BF268A6009D8D24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D28614ED2BF268B4009D8D24 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D28614EE2BF268E7009D8D24 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

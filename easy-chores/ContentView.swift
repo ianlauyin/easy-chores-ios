@@ -1,21 +1,21 @@
-//
-//  ContentView.swift
-//  easy-chores
-//
-//  Created by Claire Chu on 11/5/2024.
-//
+
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
+            Text("Home").tabItem {  Image(systemName:"house")
+                Text("Home")}.tag(1)
+            Text("Calendar").tabItem {  Image(systemName:"calendar")
+                Text("Home")}.tag(2)
+            Text("Add").tabItem { Image(systemName:"plus.circle.fill")
+                Text("Add")}.tag(3)
+            Text("Notice").tabItem { Image(systemName:"bell")
+                Text("Notice")}.tag(4)
+            Text("Profile").tabItem {  Image(systemName:"person.crop.circle")
+                Text("Home")}.tag(5)
+        }.toolbarBackground(.visible, for: .tabBar)
     }
 }
 
