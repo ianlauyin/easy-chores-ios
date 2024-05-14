@@ -1,6 +1,15 @@
 {
-  "originHash" : "9be1ce9cd5ec6eb8156aebee775862685f309175ca1b1bc32f22cff5e06214b2",
+  "originHash" : "ccab18aa3a2841789d4eaa0a7ba7c10e62c1262fc242692bdf370e3a1e4bc284",
   "pins" : [
+    {
+      "identity" : "swiftdotenv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftontheserver/swiftdotenv.git",
+      "state" : {
+        "revision" : "2a7527210766fc726fb3d26fa9b8f295841e73df",
+        "version" : "2.0.1"
+      }
+    },
     {
       "identity" : "swiftyjson",
       "kind" : "remoteSourceControl",

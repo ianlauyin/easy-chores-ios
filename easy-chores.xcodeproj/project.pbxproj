@@ -14,6 +14,10 @@
 		D25158FB2BEF701F0085870B /* easy_choresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158FA2BEF701F0085870B /* easy_choresTests.swift */; };
 		D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159042BEF701F0085870B /* easy_choresUITests.swift */; };
 		D25159072BEF701F0085870B /* easy_choresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */; };
+		D28614F32BF35794009D8D24 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28614F22BF35794009D8D24 /* APIManager.swift */; };
+		D28614F62BF35B9A009D8D24 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = D28614F52BF35B9A009D8D24 /* .env */; };
+		D28614FA2BF35F5C009D8D24 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = D28614F92BF35F5C009D8D24 /* SwiftDotEnv */; };
+		D28614FC2BF36A8D009D8D24 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D28614FB2BF36A8D009D8D24 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,8 @@
 		D25159002BEF701F0085870B /* easy-choresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easy-choresUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25159042BEF701F0085870B /* easy_choresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITests.swift; sourceTree = "<group>"; };
 		D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D28614F22BF35794009D8D24 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D28614F52BF35B9A009D8D24 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28614FC2BF36A8D009D8D24 /* SwiftyJSON in Frameworks */,
+				D28614FA2BF35F5C009D8D24 /* SwiftDotEnv in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +82,7 @@
 		D25158DD2BEF70110085870B = {
 			isa = PBXGroup;
 			children = (
+				D28614F52BF35B9A009D8D24 /* .env */,
 				D25158E82BEF70110085870B /* easy-chores */,
 				D25158F92BEF701F0085870B /* easy-choresTests */,
 				D25159032BEF701F0085870B /* easy-choresUITests */,
@@ -155,6 +164,7 @@
 		D28614EE2BF268E7009D8D24 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				D28614F22BF35794009D8D24 /* APIManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -175,6 +185,10 @@
 			dependencies = (
 			);
 			name = "easy-chores";
+			packageProductDependencies = (
+				D28614F92BF35F5C009D8D24 /* SwiftDotEnv */,
+				D28614FB2BF36A8D009D8D24 /* SwiftyJSON */,
+			);
 			productName = "easy-chores";
 			productReference = D25158E62BEF70110085870B /* easy-chores.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +263,7 @@
 			mainGroup = D25158DD2BEF70110085870B;
 			packageReferences = (
 				D25159132BEFCF890085870B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				D28614F42BF35AFE009D8D24 /* XCRemoteSwiftPackageReference "swiftdotenv" */,
 			);
 			productRefGroup = D25158E72BEF70110085870B /* Products */;
 			projectDirPath = "";
@@ -266,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28614F62BF35B9A009D8D24 /* .env in Resources */,
 				D25158F12BEF701D0085870B /* Preview Assets.xcassets in Resources */,
 				D25158EE2BEF701D0085870B /* Assets.xcassets in Resources */,
 			);
@@ -292,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28614F32BF35794009D8D24 /* APIManager.swift in Sources */,
 				D25158EC2BEF70110085870B /* ContentView.swift in Sources */,
 				D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */,
 			);
@@ -633,7 +650,28 @@
 				minimumVersion = 5.0.2;
 			};
 		};
+		D28614F42BF35AFE009D8D24 /* XCRemoteSwiftPackageReference "swiftdotenv" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftontheserver/swiftdotenv.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D28614F92BF35F5C009D8D24 /* SwiftDotEnv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D28614F42BF35AFE009D8D24 /* XCRemoteSwiftPackageReference "swiftdotenv" */;
+			productName = SwiftDotEnv;
+		};
+		D28614FB2BF36A8D009D8D24 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D25159132BEFCF890085870B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D25158DE2BEF70110085870B /* Project object */;
 }
