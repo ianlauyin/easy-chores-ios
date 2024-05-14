@@ -2,10 +2,16 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
+    @ObservedObject var user : UserViewModel
+    
+    init(){
+        user = UserViewModel(id: 1, username: "Ian")
+    }
+    
     var body: some View {
         TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
-            Text("Home").tabItem {  Image(systemName:"house")
+            HomeView(user:user).tabItem {  Image(systemName:"house")
                 Text("Home")}.tag(1)
             Text("Calendar").tabItem {  Image(systemName:"calendar")
                 Text("Home")}.tag(2)
@@ -20,5 +26,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainView()
 }

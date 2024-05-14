@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158E92BEF70110085870B /* easy_choresApp.swift */; };
-		D25158EC2BEF70110085870B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158EB2BEF70110085870B /* ContentView.swift */; };
+		D25158EC2BEF70110085870B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158EB2BEF70110085870B /* MainView.swift */; };
 		D25158EE2BEF701D0085870B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25158ED2BEF701D0085870B /* Assets.xcassets */; };
 		D25158F12BEF701D0085870B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25158F02BEF701D0085870B /* Preview Assets.xcassets */; };
 		D25158FB2BEF701F0085870B /* easy_choresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158FA2BEF701F0085870B /* easy_choresTests.swift */; };
@@ -18,6 +18,16 @@
 		D28614F62BF35B9A009D8D24 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = D28614F52BF35B9A009D8D24 /* .env */; };
 		D28614FA2BF35F5C009D8D24 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = D28614F92BF35F5C009D8D24 /* SwiftDotEnv */; };
 		D28614FC2BF36A8D009D8D24 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D28614FB2BF36A8D009D8D24 /* SwiftyJSON */; };
+		D28614FE2BF382DF009D8D24 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28614FD2BF382DF009D8D24 /* HomeView.swift */; };
+		D28615062BF38649009D8D24 /* ChoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615052BF38649009D8D24 /* ChoreModel.swift */; };
+		D28615082BF38704009D8D24 /* GroceryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615072BF38704009D8D24 /* GroceryModel.swift */; };
+		D286150A2BF387EA009D8D24 /* GroceryPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615092BF387EA009D8D24 /* GroceryPhotoModel.swift */; };
+		D286150C2BF38844009D8D24 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D286150B2BF38844009D8D24 /* UserModel.swift */; };
+		D286150E2BF388BA009D8D24 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D286150D2BF388BA009D8D24 /* GroupModel.swift */; };
+		D28615112BF38F05009D8D24 /* HomeGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615102BF38F05009D8D24 /* HomeGroupView.swift */; };
+		D28615132BF38F36009D8D24 /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615122BF38F36009D8D24 /* GroupListView.swift */; };
+		D28615152BF38FD1009D8D24 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615142BF38FD1009D8D24 /* GroupViewModel.swift */; };
+		D28615172BF39033009D8D24 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615162BF39033009D8D24 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +50,7 @@
 /* Begin PBXFileReference section */
 		D25158E62BEF70110085870B /* easy-chores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "easy-chores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25158E92BEF70110085870B /* easy_choresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresApp.swift; sourceTree = "<group>"; };
-		D25158EB2BEF70110085870B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D25158EB2BEF70110085870B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D25158ED2BEF701D0085870B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D25158F02BEF701D0085870B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D25158F62BEF701F0085870B /* easy-choresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easy-choresTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +60,16 @@
 		D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D28614F22BF35794009D8D24 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D28614F52BF35B9A009D8D24 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		D28614FD2BF382DF009D8D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D28615052BF38649009D8D24 /* ChoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreModel.swift; sourceTree = "<group>"; };
+		D28615072BF38704009D8D24 /* GroceryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryModel.swift; sourceTree = "<group>"; };
+		D28615092BF387EA009D8D24 /* GroceryPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryPhotoModel.swift; sourceTree = "<group>"; };
+		D286150B2BF38844009D8D24 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D286150D2BF388BA009D8D24 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		D28615102BF38F05009D8D24 /* HomeGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroupView.swift; sourceTree = "<group>"; };
+		D28615122BF38F36009D8D24 /* GroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListView.swift; sourceTree = "<group>"; };
+		D28615142BF38FD1009D8D24 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		D28615162BF39033009D8D24 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +128,7 @@
 				D28614EC2BF268A6009D8D24 /* Models */,
 				D28614EB2BF26847009D8D24 /* Views */,
 				D25158E92BEF70110085870B /* easy_choresApp.swift */,
-				D25158EB2BEF70110085870B /* ContentView.swift */,
+				D25158EB2BEF70110085870B /* MainView.swift */,
 				D25158ED2BEF701D0085870B /* Assets.xcassets */,
 				D25158EF2BEF701D0085870B /* Preview Content */,
 			);
@@ -143,6 +163,7 @@
 		D28614EB2BF26847009D8D24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D286150F2BF38EDD009D8D24 /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +171,11 @@
 		D28614EC2BF268A6009D8D24 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D28615052BF38649009D8D24 /* ChoreModel.swift */,
+				D28615072BF38704009D8D24 /* GroceryModel.swift */,
+				D28615092BF387EA009D8D24 /* GroceryPhotoModel.swift */,
+				D286150B2BF38844009D8D24 /* UserModel.swift */,
+				D286150D2BF388BA009D8D24 /* GroupModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,6 +183,8 @@
 		D28614ED2BF268B4009D8D24 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D28615142BF38FD1009D8D24 /* GroupViewModel.swift */,
+				D28615162BF39033009D8D24 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -167,6 +195,16 @@
 				D28614F22BF35794009D8D24 /* APIManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		D286150F2BF38EDD009D8D24 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D28614FD2BF382DF009D8D24 /* HomeView.swift */,
+				D28615102BF38F05009D8D24 /* HomeGroupView.swift */,
+				D28615122BF38F36009D8D24 /* GroupListView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,8 +347,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28614F32BF35794009D8D24 /* APIManager.swift in Sources */,
-				D25158EC2BEF70110085870B /* ContentView.swift in Sources */,
+				D28615132BF38F36009D8D24 /* GroupListView.swift in Sources */,
+				D28615082BF38704009D8D24 /* GroceryModel.swift in Sources */,
+				D286150E2BF388BA009D8D24 /* GroupModel.swift in Sources */,
+				D286150C2BF38844009D8D24 /* UserModel.swift in Sources */,
+				D28614FE2BF382DF009D8D24 /* HomeView.swift in Sources */,
+				D28615112BF38F05009D8D24 /* HomeGroupView.swift in Sources */,
+				D25158EC2BEF70110085870B /* MainView.swift in Sources */,
+				D28615152BF38FD1009D8D24 /* GroupViewModel.swift in Sources */,
+				D28615172BF39033009D8D24 /* UserViewModel.swift in Sources */,
 				D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */,
+				D28615062BF38649009D8D24 /* ChoreModel.swift in Sources */,
+				D286150A2BF387EA009D8D24 /* GroceryPhotoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
