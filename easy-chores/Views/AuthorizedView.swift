@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct AuthorizedView: View {
-    @StateObject var user = UserModel(userId:2)
+    @StateObject var user = UserViewModel(userId:2)
     
     var body: some View {
         TabView{
@@ -18,8 +18,4 @@ struct AuthorizedView: View {
                 Text("Profile")}.tag(5)
         }.toolbarBackground(.visible, for: .tabBar).environmentObject(user)
     }
-}
-
-#Preview {
-    AuthorizedView()
 }

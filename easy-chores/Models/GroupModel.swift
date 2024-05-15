@@ -1,19 +1,9 @@
 
 import Foundation
 
-
-class GroupModel {
-    var id: Int? = nil
-    var name:String? = nil
-    
-    init(id:Int?,name:String?){
-        self.id=id
-        self.name=name
-    }
-    
-}
-
-struct GroupDataDecorder:Codable{
+struct GroupModel:Codable,Identifiable{
     let id: Int
-    let name:String
+    var name:String? = nil
 }
+
+let previewGroup = GroupModel(id:1, name: "Group1")
