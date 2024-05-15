@@ -2,20 +2,18 @@
 import SwiftUI
 
 struct HomeView: View {
-    var user : UserViewModel
+    @EnvironmentObject var user : UserModel
+    @State var currentGroupId : Int?
 
-    init(user:UserViewModel){
-        self.user = user
-    }
     var body: some View {
         VStack{
-            Text("Welcome! \(user.user.username)")
-            
+            Text("Welcome! \(user.username ?? "")")
+            HomeGroupView(currentGroupId:$currentGroupId)
         }
     }
 }
 
-let previewUser = UserViewModel(id: 1, username: "Ian")
+
 #Preview {
-    HomeView(user:previewUser)
+    HomeView()
 }

@@ -1,7 +1,6 @@
 
 
 import Foundation
-import DotEnv
 
 enum APIError: Error {
     case invalidURL
@@ -11,14 +10,16 @@ enum APIError: Error {
     case invalidReponseData
 }
 
+
 class APIManager {
-    static let apiManager = APIManager()
-    private let env = DotEnv(withFile: ".env")
-    private init() {}
+    static let request = APIManager()
     
-    
-    func get(url: String, completion: @escaping (Result<Dictionary<String,Any>,APIError>) -> Void){
-        guard let urlInstance = URL(string:env.get("BACKEND_URL")! + url) else {
+    func get(url: String, completion: @escaping (Result<Data,APIError>) -> Void){
+        guard let BACKEND_URL = ProcessInfo.processInfo.environment["BACKEND_URL"] else{
+            completion(.failure(.invalidURL))
+            return
+        }
+        guard let urlInstance = URL(string:BACKEND_URL + url) else {
             completion(.failure(.invalidURL))
             return
         }
@@ -41,22 +42,18 @@ class APIManager {
                 completion(.failure(.invalidResponse))
                 return
             }
-            guard let dictData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                completion(.failure(.invalidData))
-                return
-            }
-            completion(.success(dictData))
+            completion(.success(data))
         }
         
         task.resume()
     }
     
-    func post(url: String, data: Dictionary<String, Any>, completion: @escaping (Result<Dictionary<String, Any>?, APIError>) -> Void) {
+    func post(url: String, data: Dictionary<String, Any>, completion: @escaping (Result<Data, APIError>) -> Void) {
         guard let jsonData = try? JSONSerialization.data(withJSONObject: data) else {
             completion(.failure(.invalidData))
             return
         }
-        guard let urlInstance = URL(string:env.get("BACKEND_URL")! + url) else {
+        guard let urlInstance = URL(string:"$(BACKEND_URL)" + url) else {
             completion(.failure(.invalidURL))
             return
         }
@@ -80,26 +77,22 @@ class APIManager {
                         }
             
             guard let data = data else {
-                completion(.success(nil))
+                completion(.failure(.invalidResponse))
                 return
             }
+            completion(.success(data))
             
-            guard let dictData = try? JSONSerialization.jsonObject(with: data , options: []) as? Dictionary<String, Any>else{
-                completion(.failure(.invalidReponseData))
-                return
-            }
-            completion(.success(dictData))
         }
         
         task.resume()
     }
     
-    func put(url: String, data: Dictionary<String, Any>, completion: @escaping (Result<Dictionary<String, Any>?, APIError>) -> Void) {
+    func put(url: String, data: Dictionary<String, Any>, completion: @escaping (Result<Data, APIError>) -> Void) {
         guard let jsonData = try? JSONSerialization.data(withJSONObject: data) else {
             completion(.failure(.invalidData))
             return
         }
-        guard let urlInstance = URL(string:env.get("BACKEND_URL")! + url) else {
+        guard let urlInstance = URL(string:"$(BACKEND_URL)" + url) else {
             completion(.failure(.invalidURL))
             return
         }
@@ -123,22 +116,17 @@ class APIManager {
                         }
             
             guard let data = data else {
-                completion(.success(nil))
+                completion(.failure(.invalidResponse))
                 return
             }
-            
-            guard let dictData = try? JSONSerialization.jsonObject(with: data , options: []) as? Dictionary<String, Any>else{
-                completion(.failure(.invalidReponseData))
-                return
-            }
-            completion(.success(dictData))
+            completion(.success(data))
         }
         
         task.resume()
     }
     
-    func delete(url: String,completion: @escaping (Result<Dictionary<String, Any>?, APIError>) -> Void) {
-        guard let urlInstance = URL(string:env.get("BACKEND_URL")! + url) else {
+    func delete(url: String,completion: @escaping (Result<Data, APIError>) -> Void) {
+        guard let urlInstance = URL(string:"$(BACKEND_URL)" + url) else {
             completion(.failure(.invalidURL))
             return
         }
@@ -160,15 +148,10 @@ class APIManager {
                         }
             
             guard let data = data else {
-                completion(.success(nil))
+                completion(.failure(.invalidResponse))
                 return
             }
-            
-            guard let dictData = try? JSONSerialization.jsonObject(with: data , options: []) as? Dictionary<String, Any>else{
-                completion(.failure(.invalidReponseData))
-                return
-            }
-            completion(.success(dictData))
+            completion(.success(data))
         }
         
         task.resume()
