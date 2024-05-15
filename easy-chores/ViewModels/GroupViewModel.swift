@@ -1,12 +1,12 @@
 
 import Foundation
 
-class GroupViewModel:ObservableObject {
+class GroupViewModel: ObservableObject {
     @Published private var groupModel : GroupModel
     var id: Int {return groupModel.id}
-    var groupName: String? {return groupModel.name}
+    var name: String? {return groupModel.name}
     
-    init(groupId:Int,name:String?){
+    init(groupId:Int,name:String?=nil){
         self.groupModel = GroupModel(id: groupId, name: name)
     }
     
