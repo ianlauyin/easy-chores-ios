@@ -8,6 +8,7 @@ enum APIError: Error {
     case invalidResponse
     case invalidData
     case invalidReponseData
+    case invalidEnv
 }
 
 
@@ -16,7 +17,7 @@ class APIManager {
     
     func get(url: String, completion: @escaping (Result<Data,APIError>) -> Void){
         guard let BACKEND_URL = ProcessInfo.processInfo.environment["BACKEND_URL"] else{
-            completion(.failure(.invalidURL))
+            completion(.failure(.invalidEnv))
             return
         }
         guard let urlInstance = URL(string:BACKEND_URL + url) else {
@@ -53,7 +54,11 @@ class APIManager {
             completion(.failure(.invalidData))
             return
         }
-        guard let urlInstance = URL(string:"$(BACKEND_URL)" + url) else {
+        guard let BACKEND_URL = ProcessInfo.processInfo.environment["BACKEND_URL"] else{
+            completion(.failure(.invalidEnv))
+            return
+        }
+        guard let urlInstance = URL(string:BACKEND_URL + url) else {
             completion(.failure(.invalidURL))
             return
         }
@@ -92,7 +97,11 @@ class APIManager {
             completion(.failure(.invalidData))
             return
         }
-        guard let urlInstance = URL(string:"$(BACKEND_URL)" + url) else {
+        guard let BACKEND_URL = ProcessInfo.processInfo.environment["BACKEND_URL"] else{
+            completion(.failure(.invalidEnv))
+            return
+        }
+        guard let urlInstance = URL(string:BACKEND_URL + url) else {
             completion(.failure(.invalidURL))
             return
         }
@@ -126,7 +135,11 @@ class APIManager {
     }
     
     func delete(url: String,completion: @escaping (Result<Data, APIError>) -> Void) {
-        guard let urlInstance = URL(string:"$(BACKEND_URL)" + url) else {
+        guard let BACKEND_URL = ProcessInfo.processInfo.environment["BACKEND_URL"] else{
+            completion(.failure(.invalidEnv))
+            return
+        }
+        guard let urlInstance = URL(string:BACKEND_URL + url) else {
             completion(.failure(.invalidURL))
             return
         }
