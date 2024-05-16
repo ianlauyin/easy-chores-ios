@@ -1,18 +1,53 @@
-//
-//  HomeGroceriesView.swift
-//  easy-chores
-//
-//  Created by Claire Chu on 16/5/2024.
-//
+
 
 import SwiftUI
 
 struct HomeGroceriesView: View {
+    @ObservedObject var currentGroup : GroupViewModel
+    @State var groceries : [GroceryViewModel] = []
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack(alignment: .bottom){
+                Text("Groceries")
+                    .font(.title)
+                    .bold()
+                Spacer()
+                
+            }
+            ScrollView(.vertical, showsIndicators: true){
+                VStack{
+                    ForEach(groceries){ grocery in
+                        GroceryItemView(grocery:grocery,handleRemove:removeGrocery)
+                        Divider()
+                    }
+                }
+            }
+        }
+        .onAppear{
+            updateGroceries()
+        }.onChange(of: currentGroup.id){
+            updateGroceries()
+        }
+    }
+    
+    func updateGroceries(){
+        currentGroup.getGroupGroceries{
+            result in
+            switch result{
+            case .success(let fetchedGroceries):
+                groceries=fetchedGroceries
+            case .failure(let error):
+                print("Grocery: \(error)")
+            }
+        }
+    }
+    
+    func removeGrocery(groceryId:Int){
+        if let index = groceries.firstIndex(where: { grocery in grocery.id == groceryId }) {
+                groceries.remove(at: index)
+            }
     }
 }
 
-#Preview {
-    HomeGroceriesView()
-}

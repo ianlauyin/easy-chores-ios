@@ -4,7 +4,11 @@ import SwiftUI
 
 struct LoadingView: View {
     var body: some View {
-        Text("Loading...")
+        GeometryReader{_ in
+            VStack(alignment: .center){
+                Text("Loading...")
+            }
+        }
     }
 }
 

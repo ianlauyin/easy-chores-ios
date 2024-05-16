@@ -2,26 +2,27 @@ import SwiftUI
 
 struct HomeGroupView: View {
     @EnvironmentObject var user : UserViewModel
-    @Binding var currentGroupId : Int?
-    @State var groups : [GroupModel] = []
+    @ObservedObject var currentGroup : GroupViewModel
+    @State var groups : [GroupViewModel] = []
     
     var body: some View {
-        HStack{
-            ForEach(groups) { group in
-                GroupListItemView(isSelected: currentGroupId == group.id, group: group)
-                    .onTapGesture {
-                        currentGroupId = group.id
-                    }
-            }
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack{
+                ForEach(groups) { group in
+                    GroupItemView(isSelected: currentGroup.id == group.id, group: group)
+                        .onTapGesture {
+                            currentGroup.id = group.id
+                        }
+                }
+            }.padding(5)
         }.onAppear {
             user.getUserGroup{result in
                 switch result {
                 case .success(let fetchedGroups):
                     groups = fetchedGroups
-                    currentGroupId = groups.first?.id
+                    currentGroup.id = groups.first?.id
                 case .failure(let error):
-                print(error)
-                groups = []
+                    print(error)
                 }
             }
         }

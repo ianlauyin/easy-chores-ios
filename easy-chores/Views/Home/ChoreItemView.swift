@@ -1,18 +1,41 @@
-//
-//  ChoreItemView.swift
-//  easy-chores
-//
-//  Created by Claire Chu on 15/5/2024.
-//
-
 import SwiftUI
 
 struct ChoreItemView: View {
+    var chore : ChoreViewModel
+    let handleRemove : (Int)->Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            VStack(alignment:.leading,spacing:5){
+                Text(chore.title ?? "Title").font(.title3).bold()
+                Text("Assigned to: \(chore.assignedUsers.joined(separator: ", "))").font(.caption)
+                Text("Date: \(chore.createdAt ?? "")").font(.caption2).foregroundStyle(.gray)
+                DoneButtonView(width:180).onTapGesture {
+                    removeChore()
+                }
+            }
+        }
+        .padding(10)
+        .frame(width:200,height:120)
+            .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(.gray, lineWidth: 2)
+        )
     }
-}
-
-#Preview {
-    ChoreItemView()
+    
+    func removeChore(){
+        chore.doneChore(completedDate: Date.now){
+            result in
+            switch result{
+            case .success():
+                guard let choreId = chore.id else{
+                    print("Remove Chore: Invalid id")
+                    return
+                }
+                handleRemove(choreId)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

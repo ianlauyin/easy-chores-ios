@@ -3,7 +3,7 @@ import SwiftUI
 
 struct GroupItemView: View {
     var isSelected : Bool
-    var group :GroupModel
+    var group :GroupViewModel
     var body: some View {
         ZStack{
             Capsule()
@@ -16,5 +16,5 @@ struct GroupItemView: View {
 
 
 #Preview {
-    GroupItemView(isSelected:true, group:previewGroup)
+    GroupItemView(isSelected:true, group:previewGroupViewModel)
 }

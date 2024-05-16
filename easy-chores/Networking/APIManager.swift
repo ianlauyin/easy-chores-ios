@@ -49,7 +49,7 @@ class APIManager {
         task.resume()
     }
     
-    func post(url: String, data: Dictionary<String, Any>, completion: @escaping (Result<Data, APIError>) -> Void) {
+    func post(url: String, data: Dictionary<String, Any>, completion: @escaping (Result<Data?, APIError>) -> Void) {
         guard let jsonData = try? JSONSerialization.data(withJSONObject: data) else {
             completion(.failure(.invalidData))
             return
@@ -80,11 +80,7 @@ class APIManager {
                         completion(.failure(.requestFailed))
                         return
                         }
-            
-            guard let data = data else {
-                completion(.failure(.invalidResponse))
-                return
-            }
+        
             completion(.success(data))
             
         }
@@ -92,7 +88,7 @@ class APIManager {
         task.resume()
     }
     
-    func put(url: String, data: Dictionary<String, Any>, completion: @escaping (Result<Data, APIError>) -> Void) {
+    func put(url: String, data: Dictionary<String, Any>, completion: @escaping (Result<Data?, APIError>) -> Void) {
         guard let jsonData = try? JSONSerialization.data(withJSONObject: data) else {
             completion(.failure(.invalidData))
             return
@@ -123,18 +119,13 @@ class APIManager {
                         completion(.failure(.requestFailed))
                         return
                         }
-            
-            guard let data = data else {
-                completion(.failure(.invalidResponse))
-                return
-            }
             completion(.success(data))
         }
         
         task.resume()
     }
     
-    func delete(url: String,completion: @escaping (Result<Data, APIError>) -> Void) {
+    func delete(url: String,completion: @escaping (Result<Data?, APIError>) -> Void) {
         guard let BACKEND_URL = ProcessInfo.processInfo.environment["BACKEND_URL"] else{
             completion(.failure(.invalidEnv))
             return
@@ -159,11 +150,7 @@ class APIManager {
                         completion(.failure(.requestFailed))
                         return
                         }
-            
-            guard let data = data else {
-                completion(.failure(.invalidResponse))
-                return
-            }
+        
             completion(.success(data))
         }
         

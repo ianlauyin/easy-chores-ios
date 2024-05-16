@@ -2,26 +2,23 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var user : UserViewModel
-    @State var currentGroupId : Int?
-    @State private var currentGroup : GroupViewModel? = nil
-    
+    @EnvironmentObject private var user : UserViewModel
+    @StateObject private var currentGroup = GroupViewModel()
         
     var body: some View {
-        VStack{
-            Text("Welcome! \(user.username ?? "user")")
-            HomeGroupView(currentGroupId:$currentGroupId).onChange(of: currentGroupId){
-                guard let currentGroupId = currentGroupId else{
-                    print("Error on currentGroupId changed")
-                    return}
-                currentGroup = GroupViewModel(groupId: currentGroupId)
-                print(currentGroup?.id ?? "0")
-            }
+        GeometryReader{_ in
+            VStack(alignment: .leading){
+                Text("Welcome! \(user.username ?? "user")").font(.title2)
+                HomeGroupView(currentGroup:currentGroup)
+                if currentGroup.id != nil {
+                    VStack(spacing:20){
+                        HomeChoresView(currentGroup: currentGroup)
+                        HomeGroceriesView(currentGroup:currentGroup)
+                    }
+                }else{
+                    LoadingView()
+                }
+            }.padding(.horizontal,20)
         }
     }
-}
-
-
-#Preview {
-    HomeView()
 }

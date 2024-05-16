@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct AuthorizedView: View {
-    @StateObject var user = UserViewModel(userId:2)
+    @StateObject var user = previewUserViewModel
     
     var body: some View {
         TabView{
