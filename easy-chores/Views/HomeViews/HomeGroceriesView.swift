@@ -25,22 +25,18 @@ struct HomeGroceriesView: View {
                 }
             }
         }
-        .onAppear{
-            updateGroceries()
-        }.onChange(of: currentGroup.id){
-            updateGroceries()
+        .task(id: currentGroup.id) {
+            await updateGroceries()
         }
     }
     
-    func updateGroceries(){
-        currentGroup.getGroupGroceries{
-            result in
-            switch result{
-            case .success(let fetchedGroceries):
-                groceries=fetchedGroceries
-            case .failure(let error):
-                print("Grocery: \(error)")
-            }
+    @MainActor
+    func updateGroceries() async{
+        do{
+            let groceries = try await currentGroup.getGroupGroceries()
+            self.groceries = groceries
+        }catch{
+            print(error)
         }
     }
     

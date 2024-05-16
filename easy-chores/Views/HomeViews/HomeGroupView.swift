@@ -15,16 +15,19 @@ struct HomeGroupView: View {
                         }
                 }
             }.padding(5)
-        }.onAppear {
-            user.getUserGroup{result in
-                switch result {
-                case .success(let fetchedGroups):
-                    groups = fetchedGroups
-                    currentGroup.id = groups.first?.id
-                case .failure(let error):
-                    print(error)
-                }
-            }
+        }.task {
+            await fetchGroups()
+        }
+    }
+    
+    @MainActor
+    func fetchGroups() async {
+        do {
+            let fetchedGroups = try await user.getUserGroup()
+            groups = fetchedGroups
+            currentGroup.id = fetchedGroups.first?.id
+        } catch {
+            print(error)
         }
     }
 }

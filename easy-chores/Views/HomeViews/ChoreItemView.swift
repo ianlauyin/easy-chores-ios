@@ -11,7 +11,7 @@ struct ChoreItemView: View {
                 Text("Assigned to: \(chore.assignedUsers.joined(separator: ", "))").font(.caption)
                 Text("Date: \(chore.createdAt ?? "")").font(.caption2).foregroundStyle(.gray)
                 DoneButtonView(width:180).onTapGesture {
-                    removeChore()
+                    Task{ await removeChore() }
                 }
             }
         }
@@ -23,19 +23,16 @@ struct ChoreItemView: View {
         )
     }
     
-    func removeChore(){
-        chore.doneChore(completedDate: Date.now){
-            result in
-            switch result{
-            case .success():
-                guard let choreId = chore.id else{
-                    print("Remove Chore: Invalid id")
-                    return
-                }
-                handleRemove(choreId)
-            case .failure(let error):
-                print(error)
+    @MainActor
+    func removeChore()async{
+        do{
+            _ = try await chore.doneChore(completedDate: Date.now)
+            guard let choreId = chore.id else{
+                throw CustomError.invalidChoreId
             }
+            handleRemove(choreId)
+        }catch{
+            print(error)
         }
     }
 }

@@ -16,27 +16,23 @@ struct GroceryItemView: View {
             }
             Spacer()
             DoneButtonView(width:60).onTapGesture {
-                removeGrocery()
+                Task{await removeGrocery()}
             }
         }.padding(.trailing,20).frame(height:40)
     }
     
-    func removeGrocery(){
-        grocery.doneGrocery{
-            result in
-            switch result{
-            case .success():
-                guard let groceryId = grocery.id else{
-                    print("Remove Grocery: Invalid id")
-                    return
-                }
-                handleRemove(groceryId)
-            case .failure(let error):
-                print(error)
+    @MainActor
+    func removeGrocery()async{
+        do{
+            _ = try await grocery.doneGrocery()
+            guard let groceryId = grocery.id else{
+                throw CustomError.invalidGroceryId
             }
+            handleRemove(groceryId)
+        }catch{
+            print(error)
         }
     }
-    
 }
 
 

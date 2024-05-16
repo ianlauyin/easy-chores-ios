@@ -23,22 +23,18 @@ struct HomeChoresView: View {
                 }.padding(.bottom,15)
             }.frame(height: 120)
         }
-        .onAppear{
-            updateChores()
-        }.onChange(of: currentGroup.id){
-            updateChores()
+        .task(id: currentGroup.id) {
+            await updateChores()
         }
     }
     
-    func updateChores(){
-        currentGroup.getGroupChores{
-            result in
-            switch result{
-            case .success(let fetchedChores):
-                chores=fetchedChores
-            case .failure(let error):
-                print(error)
-            }
+    @MainActor
+    func updateChores() async{
+        do{
+            let chores = try await currentGroup.getGroupChores()
+            self.chores = chores
+        }catch{
+            print(error)
         }
     }
     
