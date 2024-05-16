@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct GroupListItemView: View {
+struct GroupItemView: View {
     var isSelected : Bool
     var group :GroupModel
     var body: some View {
@@ -16,5 +16,5 @@ struct GroupListItemView: View {
 
 
 #Preview {
-    GroupListItemView(isSelected:true, group:previewGroup)
+    GroupItemView(isSelected:true, group:previewGroup)
 }
