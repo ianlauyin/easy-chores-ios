@@ -10,9 +10,7 @@ struct ChoreItemView: View {
                 Text(chore.title ?? "Title").font(.title3).bold()
                 Text("Assigned to: \(chore.assignedUsers.joined(separator: ", "))").font(.caption)
                 Text("Date: \(chore.createdAt ?? "")").font(.caption2).foregroundStyle(.gray)
-                DoneButtonView(width:180).onTapGesture {
-                    Task{ await removeChore() }
-                }
+                DoneButtonView(width:180){Task{ await removeChore() }}
             }
         }
         .padding(10)

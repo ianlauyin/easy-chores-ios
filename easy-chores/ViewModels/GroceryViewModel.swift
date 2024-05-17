@@ -18,18 +18,17 @@ class GroceryViewModel: ObservableObject , Identifiable{
         self.detail = detail
     }
     
-    func doneGrocery(completion: @escaping (Result<Void,APIError>)->Void){
+    @MainActor
+    func doneGrocery() async throws ->Void{
         if let id = id{
-            APIManager.request.delete(url: "/groceries/\(id)") { result in
-                switch result {
-                case .success(_):
-                    completion(.success(()))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+            do {
+                _ = try await APIManager.request.delete(url: "/chores/\(id)")
+                return
+            } catch {
+                throw APIError.invalidReponseData
             }
         }else{
-            completion(.failure(.invalidData))
+            throw APIError.invalidData
         }
     }
 }

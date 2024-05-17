@@ -15,9 +15,7 @@ struct GroceryItemView: View {
                 }
             }
             Spacer()
-            DoneButtonView(width:60).onTapGesture {
-                Task{await removeGrocery()}
-            }
+            DoneButtonView(width:60){Task{await removeGrocery()}}
         }.padding(.trailing,20).frame(height:40)
     }
     

@@ -19,20 +19,19 @@ class ChoreViewModel: ObservableObject , Identifiable{
         self.assignedUsers = assignedUsers
     }
     
-    func doneChore(completedDate:Date,completion: @escaping (Result<Void,APIError>)->Void){
+    @MainActor
+    func doneChore(completedDate:Date) async throws ->Void{
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let completedDateString = dateFormatter.string(from: completedDate)
         if let id = id{
-            APIManager.request.put(url: "/chores/\(id)",data: ["completed_date":completedDateString]) { result in
-                switch result {
-                case .success(_):
-                    completion(.success(()))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+            do {
+                _ = try await APIManager.request.put(url: "/chores/\(id)", data: ["completed_date":completedDateString])
+                return
+            } catch {
+                throw APIError.invalidReponseData
             }
         }else{
-            completion(.failure(.invalidData))
+            throw APIError.invalidData
         }
     }
     

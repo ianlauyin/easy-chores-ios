@@ -9,10 +9,7 @@ struct HomeGroupView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{
                 ForEach(groups) { group in
-                    GroupItemView(isSelected: currentGroup.id == group.id, group: group)
-                        .onTapGesture {
-                            currentGroup.id = group.id
-                        }
+                    GroupItemView(isSelected: currentGroup.id == group.id, group: group){currentGroup.id = group.id}
                 }
             }.padding(5)
         }.task {

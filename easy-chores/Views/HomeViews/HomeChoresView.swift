@@ -20,7 +20,7 @@ struct HomeChoresView: View {
                 HStack(alignment: .top,spacing: 16){
                     ForEach(chores){ chore in
                         ChoreItemView(chore: chore, handleRemove:removeChore)}
-                }.padding(.bottom,15)
+                }.padding(10)
             }.frame(height: 120)
         }
         .task(id: currentGroup.id) {

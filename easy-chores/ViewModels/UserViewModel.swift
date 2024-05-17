@@ -14,33 +14,28 @@ class UserViewModel: ObservableObject, Identifiable{
         self.email = email
     }
     
-    func getUserGroup(completion: @escaping (Result<[GroupViewModel],APIError>) -> Void){
+    
+    @MainActor
+    func getUserGroup() async throws -> [GroupViewModel] {
         if let id = id {
-            APIManager.request.get(url: "/users/\(id)/groups") { result in
-                switch result {
-                case .success(let jsonData):
-                    do{
-                        let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
-                        guard let groups = jsonObject as? [[String: Any]] else {
-                            completion(.failure(.invalidReponseData))
-                            return
-                        }
-                        var groupViewModels:[GroupViewModel]=[]
-                        for group in groups{
-                            let groupViewModel = GroupViewModel(id: group["id"] as? Int,name: group["name"] as? String)
-                            groupViewModels.append(groupViewModel)
-                        }
-                        completion(.success(groupViewModels))
-                    }catch{
-                        completion(.failure(.invalidReponseData))
-                    }
-                case .failure(let error):
-                    completion(.failure(error))
+            do {
+                let jsonData = try await APIManager.request.get(url: "/users/\(id)/groups")
+                let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                guard let groups = jsonObject as? [[String: Any]] else {
+                    throw APIError.invalidReponseData
                 }
+                
+                var groupViewModels: [GroupViewModel] = []
+                for group in groups {
+                    let groupViewModel = GroupViewModel(id: group["id"] as? Int, name: group["name"] as? String)
+                    groupViewModels.append(groupViewModel)
+                }
+                return groupViewModels
+            } catch {
+                throw APIError.invalidReponseData
             }
-        }
-        else{
-            completion(.failure(.invalidData))
+        } else {
+            throw APIError.invalidData
         }
     }
 }

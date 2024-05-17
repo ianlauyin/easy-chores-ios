@@ -21,11 +21,15 @@
 		D25158FB2BEF701F0085870B /* easy_choresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158FA2BEF701F0085870B /* easy_choresTests.swift */; };
 		D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159042BEF701F0085870B /* easy_choresUITests.swift */; };
 		D25159072BEF701F0085870B /* easy_choresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */; };
+		D26ED50C2BF6898E00AA9FC9 /* AddButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */; };
+		D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */; };
 		D28614F32BF35794009D8D24 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28614F22BF35794009D8D24 /* APIManager.swift */; };
 		D28614FE2BF382DF009D8D24 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28614FD2BF382DF009D8D24 /* HomeView.swift */; };
 		D28615112BF38F05009D8D24 /* HomeGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615102BF38F05009D8D24 /* HomeGroupView.swift */; };
 		D28615132BF38F36009D8D24 /* GroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615122BF38F36009D8D24 /* GroupItemView.swift */; };
 		D28F8D5F2BF5E81E00BCE419 /* DoneButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D5E2BF5E81E00BCE419 /* DoneButtonView.swift */; };
+		D28F8D632BF65A1B00BCE419 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D622BF65A1B00BCE419 /* CustomError.swift */; };
+		D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */; };
 		D2F7F6DC2BF5C19400DDA991 /* GroceryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */; };
 		D2F7F6DE2BF5C3D600DDA991 /* HomeGroceriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */; };
 		D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */; };
@@ -66,11 +70,15 @@
 		D25159002BEF701F0085870B /* easy-choresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easy-choresUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25159042BEF701F0085870B /* easy_choresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITests.swift; sourceTree = "<group>"; };
 		D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonContainerView.swift; sourceTree = "<group>"; };
+		D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChoreView.swift; sourceTree = "<group>"; };
 		D28614F22BF35794009D8D24 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D28614FD2BF382DF009D8D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D28615102BF38F05009D8D24 /* HomeGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroupView.swift; sourceTree = "<group>"; };
 		D28615122BF38F36009D8D24 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
 		D28F8D5E2BF5E81E00BCE419 /* DoneButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButtonView.swift; sourceTree = "<group>"; };
+		D28F8D622BF65A1B00BCE419 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPopUpView.swift; sourceTree = "<group>"; };
 		D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = "<group>"; };
 		D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroceriesView.swift; sourceTree = "<group>"; };
 		D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemView.swift; sourceTree = "<group>"; };
@@ -101,13 +109,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D227C6112BF3CAE200F81355 /* Common */ = {
+		D227C6112BF3CAE200F81355 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
 				D227C6122BF3CAF700F81355 /* LoadingView.swift */,
 				D28F8D5E2BF5E81E00BCE419 /* DoneButtonView.swift */,
 			);
-			path = Common;
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 		D227C61A2BF49F6D00F81355 /* ViewModels */ = {
@@ -151,6 +159,7 @@
 				D25158EB2BEF70110085870B /* MainView.swift */,
 				D25158ED2BEF701D0085870B /* Assets.xcassets */,
 				D25158EF2BEF701D0085870B /* Preview Content */,
+				D28F8D622BF65A1B00BCE419 /* CustomError.swift */,
 			);
 			path = "easy-chores";
 			sourceTree = "<group>";
@@ -183,8 +192,9 @@
 		D28614EB2BF26847009D8D24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D227C6112BF3CAE200F81355 /* Common */,
-				D286150F2BF38EDD009D8D24 /* Home */,
+				D28F8D642BF6630200BCE419 /* AddItemViews */,
+				D227C6112BF3CAE200F81355 /* CommonViews */,
+				D286150F2BF38EDD009D8D24 /* HomeViews */,
 				D227C6142BF3D4BB00F81355 /* AuthorizedView.swift */,
 			);
 			path = Views;
@@ -198,7 +208,7 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		D286150F2BF38EDD009D8D24 /* Home */ = {
+		D286150F2BF38EDD009D8D24 /* HomeViews */ = {
 			isa = PBXGroup;
 			children = (
 				D28614FD2BF382DF009D8D24 /* HomeView.swift */,
@@ -209,7 +219,17 @@
 				D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */,
 				D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */,
 			);
-			path = Home;
+			path = HomeViews;
+			sourceTree = "<group>";
+		};
+		D28F8D642BF6630200BCE419 /* AddItemViews */ = {
+			isa = PBXGroup;
+			children = (
+				D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */,
+				D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */,
+				D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */,
+			);
+			path = AddItemViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,11 +366,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */,
 				D28614F32BF35794009D8D24 /* APIManager.swift in Sources */,
 				D2F7F6DE2BF5C3D600DDA991 /* HomeGroceriesView.swift in Sources */,
 				D28615132BF38F36009D8D24 /* GroupItemView.swift in Sources */,
 				D227C6152BF3D4BB00F81355 /* AuthorizedView.swift in Sources */,
 				D227C61C2BF49F8A00F81355 /* UserViewModel.swift in Sources */,
+				D28F8D632BF65A1B00BCE419 /* CustomError.swift in Sources */,
 				D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */,
 				D227C6212BF4E5C800F81355 /* HomeChoresView.swift in Sources */,
 				D227C6132BF3CAF700F81355 /* LoadingView.swift in Sources */,
@@ -360,8 +382,10 @@
 				D25158EC2BEF70110085870B /* MainView.swift in Sources */,
 				D28F8D5F2BF5E81E00BCE419 /* DoneButtonView.swift in Sources */,
 				D227C6252BF5031400F81355 /* ChoreViewModel.swift in Sources */,
+				D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */,
 				D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */,
 				D227C6232BF500FE00F81355 /* ChoreItemView.swift in Sources */,
+				D26ED50C2BF6898E00AA9FC9 /* AddButtonContainerView.swift in Sources */,
 				D227C61F2BF4A2E900F81355 /* GroupViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
