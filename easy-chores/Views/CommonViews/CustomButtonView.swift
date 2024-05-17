@@ -2,17 +2,18 @@
 
 import SwiftUI
 
-struct DoneButtonView: View {
+struct CustomButtonView: View {
     var width : CGFloat
+    var text : String
     var onClick : ()->Void
     
     var body: some View {
         Button(action: onClick){
             RoundedRectangle(cornerRadius: 40)
                 .fill(Color.black)
-                .frame(width:width,height:30)
+                .frame(width:width,height:40)
         }.overlay{
-            Text("Done").font(.caption).foregroundColor(.white)
+            Text(text).font(.subheadline).foregroundColor(.white)
         }
     }
 }

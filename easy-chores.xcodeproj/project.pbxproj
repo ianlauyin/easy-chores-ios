@@ -25,9 +25,9 @@
 		D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */; };
 		D28614F32BF35794009D8D24 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28614F22BF35794009D8D24 /* APIManager.swift */; };
 		D28614FE2BF382DF009D8D24 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28614FD2BF382DF009D8D24 /* HomeView.swift */; };
-		D28615112BF38F05009D8D24 /* HomeGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615102BF38F05009D8D24 /* HomeGroupView.swift */; };
+		D28615112BF38F05009D8D24 /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615102BF38F05009D8D24 /* GroupListView.swift */; };
 		D28615132BF38F36009D8D24 /* GroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615122BF38F36009D8D24 /* GroupItemView.swift */; };
-		D28F8D5F2BF5E81E00BCE419 /* DoneButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D5E2BF5E81E00BCE419 /* DoneButtonView.swift */; };
+		D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */; };
 		D28F8D632BF65A1B00BCE419 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D622BF65A1B00BCE419 /* CustomError.swift */; };
 		D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */; };
 		D2F7F6DC2BF5C19400DDA991 /* GroceryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */; };
@@ -74,9 +74,9 @@
 		D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChoreView.swift; sourceTree = "<group>"; };
 		D28614F22BF35794009D8D24 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D28614FD2BF382DF009D8D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		D28615102BF38F05009D8D24 /* HomeGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroupView.swift; sourceTree = "<group>"; };
+		D28615102BF38F05009D8D24 /* GroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListView.swift; sourceTree = "<group>"; };
 		D28615122BF38F36009D8D24 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
-		D28F8D5E2BF5E81E00BCE419 /* DoneButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButtonView.swift; sourceTree = "<group>"; };
+		D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		D28F8D622BF65A1B00BCE419 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPopUpView.swift; sourceTree = "<group>"; };
 		D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				D227C6122BF3CAF700F81355 /* LoadingView.swift */,
-				D28F8D5E2BF5E81E00BCE419 /* DoneButtonView.swift */,
+				D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -189,9 +189,19 @@
 			path = "easy-choresUITests";
 			sourceTree = "<group>";
 		};
+		D26ED50F2BF7128A00AA9FC9 /* GroupView */ = {
+			isa = PBXGroup;
+			children = (
+				D28615102BF38F05009D8D24 /* GroupListView.swift */,
+				D28615122BF38F36009D8D24 /* GroupItemView.swift */,
+			);
+			path = GroupView;
+			sourceTree = "<group>";
+		};
 		D28614EB2BF26847009D8D24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D26ED50F2BF7128A00AA9FC9 /* GroupView */,
 				D28F8D642BF6630200BCE419 /* AddItemViews */,
 				D227C6112BF3CAE200F81355 /* CommonViews */,
 				D286150F2BF38EDD009D8D24 /* HomeViews */,
@@ -212,8 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				D28614FD2BF382DF009D8D24 /* HomeView.swift */,
-				D28615102BF38F05009D8D24 /* HomeGroupView.swift */,
-				D28615122BF38F36009D8D24 /* GroupItemView.swift */,
 				D227C6202BF4E5C700F81355 /* HomeChoresView.swift */,
 				D227C6222BF500FE00F81355 /* ChoreItemView.swift */,
 				D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */,
@@ -377,10 +385,10 @@
 				D227C6212BF4E5C800F81355 /* HomeChoresView.swift in Sources */,
 				D227C6132BF3CAF700F81355 /* LoadingView.swift in Sources */,
 				D28614FE2BF382DF009D8D24 /* HomeView.swift in Sources */,
-				D28615112BF38F05009D8D24 /* HomeGroupView.swift in Sources */,
+				D28615112BF38F05009D8D24 /* GroupListView.swift in Sources */,
 				D2F7F6DC2BF5C19400DDA991 /* GroceryViewModel.swift in Sources */,
 				D25158EC2BEF70110085870B /* MainView.swift in Sources */,
-				D28F8D5F2BF5E81E00BCE419 /* DoneButtonView.swift in Sources */,
+				D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */,
 				D227C6252BF5031400F81355 /* ChoreViewModel.swift in Sources */,
 				D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */,
 				D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */,

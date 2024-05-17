@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct HomeGroupView: View {
+struct GroupListView: View {
     @EnvironmentObject var user : UserViewModel
     @ObservedObject var currentGroup : GroupViewModel
     @State var groups : [GroupViewModel] = []

@@ -9,7 +9,7 @@ struct HomeView: View {
         GeometryReader{_ in
             VStack(alignment: .leading){
                 Text("Welcome! \(user.username ?? "user")").font(.title2)
-                HomeGroupView(currentGroup:currentGroup)
+                GroupListView(currentGroup:currentGroup)
                 if currentGroup.id != nil {
                     VStack(spacing:20){
                         HomeChoresView(currentGroup: currentGroup)

@@ -41,8 +41,7 @@ struct AuthorizedView: View {
                 }
         }
         if addItemPage == .chore{
-            Button(action: {addItemPage = .none}){
-                Text("Chore Back")}
+            CreateChoreView(addItemPage:$addItemPage)
         }
         if addItemPage == .grocery{
             Button(action: {addItemPage = .none}){
