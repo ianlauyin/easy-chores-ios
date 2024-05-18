@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ChoreItemView: View {
+    @EnvironmentObject private var errorManager : ErrorManager
     var chore : ChoreViewModel
     let handleRemove : (Int)->Void
     
@@ -18,7 +19,7 @@ struct ChoreItemView: View {
         .frame(width:200,height:120)
             .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(.gray, lineWidth: 2)
+                .stroke(.gray, lineWidth: 1)
         )
     }
     
@@ -31,7 +32,7 @@ struct ChoreItemView: View {
             }
             handleRemove(choreId)
         }catch{
-            print(error)
+            errorManager.message = error.localizedDescription
         }
     }
 }

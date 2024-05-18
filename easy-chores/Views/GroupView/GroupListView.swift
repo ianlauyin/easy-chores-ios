@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct GroupListView: View {
-    @EnvironmentObject var user : UserViewModel
+    @EnvironmentObject var user : LoginUserViewModel
+    @EnvironmentObject private var errorManager : ErrorManager
     @ObservedObject var currentGroup : GroupViewModel
     @State var groups : [GroupViewModel] = []
     
@@ -24,7 +25,7 @@ struct GroupListView: View {
             groups = fetchedGroups
             currentGroup.id = fetchedGroups.first?.id
         } catch {
-            print(error)
+            errorManager.message = error.localizedDescription
         }
     }
 }

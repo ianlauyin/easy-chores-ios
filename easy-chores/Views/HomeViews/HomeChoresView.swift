@@ -4,6 +4,7 @@ import SwiftUI
 
 struct HomeChoresView: View {
     @ObservedObject var currentGroup : GroupViewModel
+    @EnvironmentObject private var errorManager : ErrorManager
     @State var chores : [ChoreViewModel] = []
     
     
@@ -34,7 +35,7 @@ struct HomeChoresView: View {
             let chores = try await currentGroup.getGroupChores()
             self.chores = chores
         }catch{
-            print(error)
+            errorManager.message = error.localizedDescription
         }
     }
     

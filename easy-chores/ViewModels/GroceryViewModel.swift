@@ -25,7 +25,7 @@ class GroceryViewModel: ObservableObject , Identifiable{
                 _ = try await APIManager.request.delete(url: "/chores/\(id)")
                 return
             } catch {
-                throw APIError.invalidReponseData
+                throw error
             }
         }else{
             throw APIError.invalidData

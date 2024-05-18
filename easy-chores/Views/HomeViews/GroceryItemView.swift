@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct GroceryItemView: View {
+    @EnvironmentObject private var errorManager : ErrorManager
     let grocery : GroceryViewModel
     let handleRemove : (Int)->Void
     
@@ -28,7 +29,7 @@ struct GroceryItemView: View {
             }
             handleRemove(groceryId)
         }catch{
-            print(error)
+            errorManager.message = error.localizedDescription
         }
     }
 }

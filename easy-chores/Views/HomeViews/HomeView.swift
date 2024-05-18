@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject private var user : UserViewModel
+    @EnvironmentObject private var user : LoginUserViewModel
     @StateObject private var currentGroup = GroupViewModel()
         
     var body: some View {
@@ -19,6 +19,6 @@ struct HomeView: View {
                     LoadingView()
                 }
             }.padding(.horizontal,20)
-        }
+        }.onAppear{print(user.id ?? "no id")}
     }
 }

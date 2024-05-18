@@ -3,6 +3,7 @@
 import SwiftUI
 
 struct HomeGroceriesView: View {
+    @EnvironmentObject private var errorManager : ErrorManager
     @ObservedObject var currentGroup : GroupViewModel
     @State var groceries : [GroceryViewModel] = []
     
@@ -36,7 +37,7 @@ struct HomeGroceriesView: View {
             let groceries = try await currentGroup.getGroupGroceries()
             self.groceries = groceries
         }catch{
-            print(error)
+            errorManager.message = error.localizedDescription
         }
     }
     

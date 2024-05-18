@@ -83,7 +83,7 @@ class GroupViewModel: ObservableObject,Identifiable {
                 }
                 return groceryViewModels
             } catch {
-                throw APIError.invalidReponseData
+                throw error
             }
         }else{
             throw APIError.invalidData

@@ -14,6 +14,14 @@
 		D227C6212BF4E5C800F81355 /* HomeChoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C6202BF4E5C700F81355 /* HomeChoresView.swift */; };
 		D227C6232BF500FE00F81355 /* ChoreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C6222BF500FE00F81355 /* ChoreItemView.swift */; };
 		D227C6252BF5031400F81355 /* ChoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C6242BF5031400F81355 /* ChoreViewModel.swift */; };
+		D231EF592BF862D6002DE76A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF582BF862D5002DE76A /* RegisterView.swift */; };
+		D231EF5C2BF8F597002DE76A /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = D231EF5B2BF8F597002DE76A /* SwiftKeychainWrapper */; };
+		D231EF5E2BF8F69F002DE76A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF5D2BF8F69F002DE76A /* KeyChainManager.swift */; };
+		D231EF612BF91255002DE76A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF602BF91254002DE76A /* APIError.swift */; };
+		D231EF652BF9129B002DE76A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF642BF9129B002DE76A /* ErrorView.swift */; };
+		D231EF672BF912BF002DE76A /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF662BF912BF002DE76A /* ErrorManager.swift */; };
+		D231EF692BF91A36002DE76A /* LoginUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF682BF91A36002DE76A /* LoginUserViewModel.swift */; };
+		D231EF6C2BF9222D002DE76A /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF6B2BF9222D002DE76A /* LogoutButtonView.swift */; };
 		D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158E92BEF70110085870B /* easy_choresApp.swift */; };
 		D25158EC2BEF70110085870B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158EB2BEF70110085870B /* MainView.swift */; };
 		D25158EE2BEF701D0085870B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25158ED2BEF701D0085870B /* Assets.xcassets */; };
@@ -21,8 +29,12 @@
 		D25158FB2BEF701F0085870B /* easy_choresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158FA2BEF701F0085870B /* easy_choresTests.swift */; };
 		D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159042BEF701F0085870B /* easy_choresUITests.swift */; };
 		D25159072BEF701F0085870B /* easy_choresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */; };
+		D252F6142BF8446F004272AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252F6132BF8446F004272AA /* LoginView.swift */; };
 		D26ED50C2BF6898E00AA9FC9 /* AddButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */; };
 		D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */; };
+		D26ED5132BF7432700AA9FC9 /* CreateGroceryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED5122BF7432600AA9FC9 /* CreateGroceryView.swift */; };
+		D26ED51A2BF750C600AA9FC9 /* CreateGroceryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED5192BF750C600AA9FC9 /* CreateGroceryItemView.swift */; };
+		D26ED51C2BF7697100AA9FC9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED51B2BF7697100AA9FC9 /* Extension.swift */; };
 		D28614F32BF35794009D8D24 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28614F22BF35794009D8D24 /* APIManager.swift */; };
 		D28614FE2BF382DF009D8D24 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28614FD2BF382DF009D8D24 /* HomeView.swift */; };
 		D28615112BF38F05009D8D24 /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615102BF38F05009D8D24 /* GroupListView.swift */; };
@@ -60,6 +72,13 @@
 		D227C6202BF4E5C700F81355 /* HomeChoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChoresView.swift; sourceTree = "<group>"; };
 		D227C6222BF500FE00F81355 /* ChoreItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreItemView.swift; sourceTree = "<group>"; };
 		D227C6242BF5031400F81355 /* ChoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreViewModel.swift; sourceTree = "<group>"; };
+		D231EF582BF862D5002DE76A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		D231EF5D2BF8F69F002DE76A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		D231EF602BF91254002DE76A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		D231EF642BF9129B002DE76A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		D231EF662BF912BF002DE76A /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		D231EF682BF91A36002DE76A /* LoginUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserViewModel.swift; sourceTree = "<group>"; };
+		D231EF6B2BF9222D002DE76A /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
 		D25158E62BEF70110085870B /* easy-chores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "easy-chores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25158E92BEF70110085870B /* easy_choresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresApp.swift; sourceTree = "<group>"; };
 		D25158EB2BEF70110085870B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -70,14 +89,18 @@
 		D25159002BEF701F0085870B /* easy-choresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easy-choresUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25159042BEF701F0085870B /* easy_choresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITests.swift; sourceTree = "<group>"; };
 		D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D252F6132BF8446F004272AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonContainerView.swift; sourceTree = "<group>"; };
 		D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChoreView.swift; sourceTree = "<group>"; };
+		D26ED5122BF7432600AA9FC9 /* CreateGroceryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroceryView.swift; sourceTree = "<group>"; };
+		D26ED5192BF750C600AA9FC9 /* CreateGroceryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroceryItemView.swift; sourceTree = "<group>"; };
+		D26ED51B2BF7697100AA9FC9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D28614F22BF35794009D8D24 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D28614FD2BF382DF009D8D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D28615102BF38F05009D8D24 /* GroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListView.swift; sourceTree = "<group>"; };
 		D28615122BF38F36009D8D24 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
 		D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
-		D28F8D622BF65A1B00BCE419 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		D28F8D622BF65A1B00BCE419 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomError.swift; path = ../CustomError.swift; sourceTree = "<group>"; };
 		D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPopUpView.swift; sourceTree = "<group>"; };
 		D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = "<group>"; };
 		D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroceriesView.swift; sourceTree = "<group>"; };
@@ -89,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D231EF5C2BF8F597002DE76A /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +149,28 @@
 				D227C61E2BF4A2E900F81355 /* GroupViewModel.swift */,
 				D227C6242BF5031400F81355 /* ChoreViewModel.swift */,
 				D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */,
+				D231EF682BF91A36002DE76A /* LoginUserViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D231EF5F2BF91240002DE76A /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				D231EF602BF91254002DE76A /* APIError.swift */,
+				D28F8D622BF65A1B00BCE419 /* CustomError.swift */,
+				D231EF642BF9129B002DE76A /* ErrorView.swift */,
+				D231EF662BF912BF002DE76A /* ErrorManager.swift */,
+			);
+			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		D231EF6A2BF9220E002DE76A /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				D231EF6B2BF9222D002DE76A /* LogoutButtonView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		D25158DD2BEF70110085870B = {
@@ -152,6 +196,7 @@
 		D25158E82BEF70110085870B /* easy-chores */ = {
 			isa = PBXGroup;
 			children = (
+				D231EF5F2BF91240002DE76A /* ErrorHandling */,
 				D227C61A2BF49F6D00F81355 /* ViewModels */,
 				D28614EE2BF268E7009D8D24 /* Networking */,
 				D28614EB2BF26847009D8D24 /* Views */,
@@ -159,7 +204,7 @@
 				D25158EB2BEF70110085870B /* MainView.swift */,
 				D25158ED2BEF701D0085870B /* Assets.xcassets */,
 				D25158EF2BEF701D0085870B /* Preview Content */,
-				D28F8D622BF65A1B00BCE419 /* CustomError.swift */,
+				D26ED51B2BF7697100AA9FC9 /* Extension.swift */,
 			);
 			path = "easy-chores";
 			sourceTree = "<group>";
@@ -189,6 +234,15 @@
 			path = "easy-choresUITests";
 			sourceTree = "<group>";
 		};
+		D252F6122BF7D885004272AA /* UnauthroizedView */ = {
+			isa = PBXGroup;
+			children = (
+				D252F6132BF8446F004272AA /* LoginView.swift */,
+				D231EF582BF862D5002DE76A /* RegisterView.swift */,
+			);
+			path = UnauthroizedView;
+			sourceTree = "<group>";
+		};
 		D26ED50F2BF7128A00AA9FC9 /* GroupView */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +255,8 @@
 		D28614EB2BF26847009D8D24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D231EF6A2BF9220E002DE76A /* ProfileView */,
+				D252F6122BF7D885004272AA /* UnauthroizedView */,
 				D26ED50F2BF7128A00AA9FC9 /* GroupView */,
 				D28F8D642BF6630200BCE419 /* AddItemViews */,
 				D227C6112BF3CAE200F81355 /* CommonViews */,
@@ -214,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				D28614F22BF35794009D8D24 /* APIManager.swift */,
+				D231EF5D2BF8F69F002DE76A /* KeyChainManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -236,6 +293,8 @@
 				D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */,
 				D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */,
 				D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */,
+				D26ED5122BF7432600AA9FC9 /* CreateGroceryView.swift */,
+				D26ED5192BF750C600AA9FC9 /* CreateGroceryItemView.swift */,
 			);
 			path = AddItemViews;
 			sourceTree = "<group>";
@@ -257,6 +316,7 @@
 			);
 			name = "easy-chores";
 			packageProductDependencies = (
+				D231EF5B2BF8F597002DE76A /* SwiftKeychainWrapper */,
 			);
 			productName = "easy-chores";
 			productReference = D25158E62BEF70110085870B /* easy-chores.app */;
@@ -331,6 +391,7 @@
 			);
 			mainGroup = D25158DD2BEF70110085870B;
 			packageReferences = (
+				D231EF5A2BF8F582002DE76A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = D25158E72BEF70110085870B /* Products */;
 			projectDirPath = "";
@@ -376,20 +437,31 @@
 			files = (
 				D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */,
 				D28614F32BF35794009D8D24 /* APIManager.swift in Sources */,
+				D231EF6C2BF9222D002DE76A /* LogoutButtonView.swift in Sources */,
 				D2F7F6DE2BF5C3D600DDA991 /* HomeGroceriesView.swift in Sources */,
 				D28615132BF38F36009D8D24 /* GroupItemView.swift in Sources */,
+				D231EF5E2BF8F69F002DE76A /* KeyChainManager.swift in Sources */,
+				D231EF652BF9129B002DE76A /* ErrorView.swift in Sources */,
 				D227C6152BF3D4BB00F81355 /* AuthorizedView.swift in Sources */,
 				D227C61C2BF49F8A00F81355 /* UserViewModel.swift in Sources */,
 				D28F8D632BF65A1B00BCE419 /* CustomError.swift in Sources */,
+				D26ED51A2BF750C600AA9FC9 /* CreateGroceryItemView.swift in Sources */,
 				D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */,
 				D227C6212BF4E5C800F81355 /* HomeChoresView.swift in Sources */,
 				D227C6132BF3CAF700F81355 /* LoadingView.swift in Sources */,
 				D28614FE2BF382DF009D8D24 /* HomeView.swift in Sources */,
+				D231EF612BF91255002DE76A /* APIError.swift in Sources */,
 				D28615112BF38F05009D8D24 /* GroupListView.swift in Sources */,
+				D252F6142BF8446F004272AA /* LoginView.swift in Sources */,
 				D2F7F6DC2BF5C19400DDA991 /* GroceryViewModel.swift in Sources */,
+				D231EF592BF862D6002DE76A /* RegisterView.swift in Sources */,
 				D25158EC2BEF70110085870B /* MainView.swift in Sources */,
+				D231EF692BF91A36002DE76A /* LoginUserViewModel.swift in Sources */,
+				D26ED51C2BF7697100AA9FC9 /* Extension.swift in Sources */,
 				D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */,
 				D227C6252BF5031400F81355 /* ChoreViewModel.swift in Sources */,
+				D26ED5132BF7432700AA9FC9 /* CreateGroceryView.swift in Sources */,
+				D231EF672BF912BF002DE76A /* ErrorManager.swift in Sources */,
 				D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */,
 				D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */,
 				D227C6232BF500FE00F81355 /* ChoreItemView.swift in Sources */,
@@ -726,6 +798,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D231EF5A2BF8F582002DE76A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D231EF5B2BF8F597002DE76A /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D231EF5A2BF8F582002DE76A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D25158DE2BEF70110085870B /* Project object */;
 }

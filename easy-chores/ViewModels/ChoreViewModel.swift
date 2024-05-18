@@ -28,7 +28,7 @@ class ChoreViewModel: ObservableObject , Identifiable{
                 _ = try await APIManager.request.put(url: "/chores/\(id)", data: ["completed_date":completedDateString])
                 return
             } catch {
-                throw APIError.invalidReponseData
+                throw error
             }
         }else{
             throw APIError.invalidData

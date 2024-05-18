@@ -8,7 +8,8 @@ struct CreateChoreView: View {
         }
     @FocusState private var focusedField: Field?
     
-    @EnvironmentObject var user : UserViewModel
+    @EnvironmentObject var user : LoginUserViewModel
+    @EnvironmentObject private var errorManager : ErrorManager
     @Binding var addItemPage : AddItemPage
     @State private var title = ""
     @State private var detail = ""
@@ -18,7 +19,7 @@ struct CreateChoreView: View {
     
     
     var body: some View {
-        VStack(spacing:30){
+        VStack(spacing:15){
             HStack {
                 Button(action: {
                     addItemPage = .none
@@ -42,13 +43,25 @@ struct CreateChoreView: View {
                 .focused($focusedField, equals: .title)
             GroupListView(currentGroup: currentGroup)
             if !users.isEmpty {
-                Picker("Assign this chore to...", selection: $selectedUserId){
-                    Text("Select a user")
-                        .tag(nil as Int?)
-                    ForEach(users , id: \.id) { user in
-                        Text(user.username ?? "Unknown user").tag(user.id)
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.white)
+                    .stroke(Color.gray, lineWidth: 1)
+                    .frame(width:.infinity,height:40)
+                    .overlay{
+                        HStack{
+                            Text("Assign this chore to...")
+                                .padding()
+                            Spacer()
+                            Picker("", selection: $selectedUserId){
+                                Text("Select a user")
+                                    .tag(nil as Int?)
+                                ForEach(users , id: \.id) { user in
+                                    Text(user.username ?? "Unknown user").tag(user.id)
+                                }
+                            }.pickerStyle(.menu)
+                                .accentColor(.black)
+                        }
                     }
-                }
             }
             VStack(alignment: .leading){
                 Text("Detail:")
@@ -79,7 +92,7 @@ struct CreateChoreView: View {
             let users = try await currentGroup.getGroupUsers()
             self.users = users
         }catch{
-            print(error)
+            errorManager.message = error.localizedDescription
         }
     }
     
@@ -91,8 +104,7 @@ struct CreateChoreView: View {
                     "group_id":groupId,
                     "title":title,
                     "detail":detail]
-                guard let jsonChoreData = try await APIManager.request.post(url: "/chores", data: choreData)else {
-                    throw APIError.invalidReponseData  }
+                let jsonChoreData = try await APIManager.request.post(url: "/chores", data: choreData)
                 let jsonChoreObject = try JSONSerialization.jsonObject(with: jsonChoreData, options: [])
                 guard let chore = jsonChoreObject as? [String: Any] else {
                     throw APIError.invalidReponseData
@@ -103,14 +115,14 @@ struct CreateChoreView: View {
                 let assignedUserIdData = ["user_ids":[selectedUserId]]
                 _ = try await APIManager.request.put(url: "/chores/\(choreId)/users", data: assignedUserIdData)
             }catch{
-                print(error)
+                errorManager.message = error.localizedDescription
             }
         }else{
-            print(APIError.invalidData)
+            errorManager.message = "Wrong Group Id"
         }
     }
 }
 
 #Preview {
-    CreateChoreView(addItemPage: .constant(.chore)).environmentObject(previewUserViewModel)
+    CreateChoreView(addItemPage: .constant(.chore)).environmentObject(previewLoginUserViewModel)
 }

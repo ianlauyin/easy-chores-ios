@@ -9,7 +9,7 @@ enum AddItemPage{
 
 
 struct AuthorizedView: View {
-    @StateObject var user = previewUserViewModel
+    @EnvironmentObject var user : LoginUserViewModel
     @State private var openAddPopUp = false
     @State private var addItemPage: AddItemPage = .none
     
@@ -29,12 +29,11 @@ struct AuthorizedView: View {
                     Image(systemName:"bell")
                     Text("Notice")
                 }.tag(4)
-                Text("Profile").tabItem {
+                LogoutButtonView().tabItem {
                     Image(systemName:"person.crop.circle")
                     Text("Profile")
                 }.tag(5)
-            }.environmentObject(user)
-                .toolbarBackground(.visible, for: .tabBar)
+            }.toolbarBackground(.visible, for: .tabBar)
                 .overlay{
                     AddButtonContainerView(openAddPopUp: $openAddPopUp,
                                            addItemPage: $addItemPage)
@@ -44,8 +43,9 @@ struct AuthorizedView: View {
             CreateChoreView(addItemPage:$addItemPage)
         }
         if addItemPage == .grocery{
-            Button(action: {addItemPage = .none}){
-                Text("Grocery Back")}
+            CreateGroceryView(addItemPage:$addItemPage)
         }
     }
+    
+    
 }
