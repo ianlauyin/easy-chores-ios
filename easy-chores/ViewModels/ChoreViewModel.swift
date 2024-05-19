@@ -18,6 +18,7 @@ class ChoreViewModel: ObservableObject , Identifiable{
         self.completedDate = completedDate
         self.assignedUsers = assignedUsers
     }
+ 
     
     @MainActor
     func doneChore(completedDate:Date) async throws ->Void{

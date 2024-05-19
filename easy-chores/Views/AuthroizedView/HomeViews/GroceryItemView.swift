@@ -29,7 +29,7 @@ struct GroceryItemView: View {
             }
             handleRemove(groceryId)
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.message = "GroceryItemView: \(error.localizedDescription)"
         }
     }
 }

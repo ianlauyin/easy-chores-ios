@@ -22,6 +22,7 @@
 		D231EF672BF912BF002DE76A /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF662BF912BF002DE76A /* ErrorManager.swift */; };
 		D231EF692BF91A36002DE76A /* LoginUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF682BF91A36002DE76A /* LoginUserViewModel.swift */; };
 		D231EF6C2BF9222D002DE76A /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF6B2BF9222D002DE76A /* LogoutButtonView.swift */; };
+		D231EF6F2BF9D005002DE76A /* AuthroizedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231EF6E2BF9D005002DE76A /* AuthroizedTabView.swift */; };
 		D25158EA2BEF70110085870B /* easy_choresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158E92BEF70110085870B /* easy_choresApp.swift */; };
 		D25158EC2BEF70110085870B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158EB2BEF70110085870B /* MainView.swift */; };
 		D25158EE2BEF701D0085870B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25158ED2BEF701D0085870B /* Assets.xcassets */; };
@@ -30,6 +31,10 @@
 		D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159042BEF701F0085870B /* easy_choresUITests.swift */; };
 		D25159072BEF701F0085870B /* easy_choresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */; };
 		D252F6142BF8446F004272AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252F6132BF8446F004272AA /* LoginView.swift */; };
+		D25612702BFA417F00CF7186 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256126F2BFA417F00CF7186 /* MenuButton.swift */; };
+		D25612722BFA444F00CF7186 /* GroupMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612712BFA444F00CF7186 /* GroupMenuView.swift */; };
+		D25612742BFA467300CF7186 /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612732BFA467300CF7186 /* CreateGroupView.swift */; };
+		D25612762BFA468700CF7186 /* EditGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612752BFA468700CF7186 /* EditGroupView.swift */; };
 		D26ED50C2BF6898E00AA9FC9 /* AddButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */; };
 		D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */; };
 		D26ED5132BF7432700AA9FC9 /* CreateGroceryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED5122BF7432600AA9FC9 /* CreateGroceryView.swift */; };
@@ -79,6 +84,7 @@
 		D231EF662BF912BF002DE76A /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		D231EF682BF91A36002DE76A /* LoginUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserViewModel.swift; sourceTree = "<group>"; };
 		D231EF6B2BF9222D002DE76A /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
+		D231EF6E2BF9D005002DE76A /* AuthroizedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthroizedTabView.swift; sourceTree = "<group>"; };
 		D25158E62BEF70110085870B /* easy-chores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "easy-chores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25158E92BEF70110085870B /* easy_choresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresApp.swift; sourceTree = "<group>"; };
 		D25158EB2BEF70110085870B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 		D25159042BEF701F0085870B /* easy_choresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITests.swift; sourceTree = "<group>"; };
 		D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D252F6132BF8446F004272AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D256126F2BFA417F00CF7186 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		D25612712BFA444F00CF7186 /* GroupMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMenuView.swift; sourceTree = "<group>"; };
+		D25612732BFA467300CF7186 /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
+		D25612752BFA468700CF7186 /* EditGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupView.swift; sourceTree = "<group>"; };
 		D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonContainerView.swift; sourceTree = "<group>"; };
 		D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChoreView.swift; sourceTree = "<group>"; };
 		D26ED5122BF7432600AA9FC9 /* CreateGroceryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroceryView.swift; sourceTree = "<group>"; };
@@ -136,6 +146,7 @@
 		D227C6112BF3CAE200F81355 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				D256126F2BFA417F00CF7186 /* MenuButton.swift */,
 				D227C6122BF3CAF700F81355 /* LoadingView.swift */,
 				D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */,
 			);
@@ -171,6 +182,19 @@
 				D231EF6B2BF9222D002DE76A /* LogoutButtonView.swift */,
 			);
 			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		D231EF6D2BF9CDE3002DE76A /* AuthroizedView */ = {
+			isa = PBXGroup;
+			children = (
+				D231EF6A2BF9220E002DE76A /* ProfileView */,
+				D26ED50F2BF7128A00AA9FC9 /* GroupView */,
+				D28F8D642BF6630200BCE419 /* AddItemViews */,
+				D286150F2BF38EDD009D8D24 /* HomeViews */,
+				D227C6142BF3D4BB00F81355 /* AuthorizedView.swift */,
+				D231EF6E2BF9D005002DE76A /* AuthroizedTabView.swift */,
+			);
+			path = AuthroizedView;
 			sourceTree = "<group>";
 		};
 		D25158DD2BEF70110085870B = {
@@ -248,6 +272,8 @@
 			children = (
 				D28615102BF38F05009D8D24 /* GroupListView.swift */,
 				D28615122BF38F36009D8D24 /* GroupItemView.swift */,
+				D25612732BFA467300CF7186 /* CreateGroupView.swift */,
+				D25612752BFA468700CF7186 /* EditGroupView.swift */,
 			);
 			path = GroupView;
 			sourceTree = "<group>";
@@ -255,13 +281,9 @@
 		D28614EB2BF26847009D8D24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D231EF6A2BF9220E002DE76A /* ProfileView */,
 				D252F6122BF7D885004272AA /* UnauthroizedView */,
-				D26ED50F2BF7128A00AA9FC9 /* GroupView */,
-				D28F8D642BF6630200BCE419 /* AddItemViews */,
+				D231EF6D2BF9CDE3002DE76A /* AuthroizedView */,
 				D227C6112BF3CAE200F81355 /* CommonViews */,
-				D286150F2BF38EDD009D8D24 /* HomeViews */,
-				D227C6142BF3D4BB00F81355 /* AuthorizedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,6 +305,7 @@
 				D227C6222BF500FE00F81355 /* ChoreItemView.swift */,
 				D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */,
 				D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */,
+				D25612712BFA444F00CF7186 /* GroupMenuView.swift */,
 			);
 			path = HomeViews;
 			sourceTree = "<group>";
@@ -435,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25612702BFA417F00CF7186 /* MenuButton.swift in Sources */,
 				D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */,
 				D28614F32BF35794009D8D24 /* APIManager.swift in Sources */,
 				D231EF6C2BF9222D002DE76A /* LogoutButtonView.swift in Sources */,
@@ -443,10 +467,13 @@
 				D231EF5E2BF8F69F002DE76A /* KeyChainManager.swift in Sources */,
 				D231EF652BF9129B002DE76A /* ErrorView.swift in Sources */,
 				D227C6152BF3D4BB00F81355 /* AuthorizedView.swift in Sources */,
+				D25612762BFA468700CF7186 /* EditGroupView.swift in Sources */,
 				D227C61C2BF49F8A00F81355 /* UserViewModel.swift in Sources */,
 				D28F8D632BF65A1B00BCE419 /* CustomError.swift in Sources */,
 				D26ED51A2BF750C600AA9FC9 /* CreateGroceryItemView.swift in Sources */,
 				D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */,
+				D25612722BFA444F00CF7186 /* GroupMenuView.swift in Sources */,
+				D231EF6F2BF9D005002DE76A /* AuthroizedTabView.swift in Sources */,
 				D227C6212BF4E5C800F81355 /* HomeChoresView.swift in Sources */,
 				D227C6132BF3CAF700F81355 /* LoadingView.swift in Sources */,
 				D28614FE2BF382DF009D8D24 /* HomeView.swift in Sources */,
@@ -460,6 +487,7 @@
 				D26ED51C2BF7697100AA9FC9 /* Extension.swift in Sources */,
 				D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */,
 				D227C6252BF5031400F81355 /* ChoreViewModel.swift in Sources */,
+				D25612742BFA467300CF7186 /* CreateGroupView.swift in Sources */,
 				D26ED5132BF7432700AA9FC9 /* CreateGroceryView.swift in Sources */,
 				D231EF672BF912BF002DE76A /* ErrorManager.swift in Sources */,
 				D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */,

@@ -2,37 +2,39 @@
 import SwiftUI
 
 struct AddButtonContainerView: View {
-    @Binding var openAddPopUp : Bool
-    @Binding var addItemPage : AddItemPage
+    @State var openPopUp : Bool = false
+    @Binding var currentPage : CurrentPage
     
     var body: some View {
-            VStack{
+        VStack(alignment: .center){
                 Spacer()
-                if openAddPopUp {
+                if openPopUp {
                     HStack(spacing:20){
                         AddItemPopUpView(text: "Add Chores"){
-                            addItemPage = .chore
-                            openAddPopUp = false
+                            currentPage = .chore
+                            openPopUp = false
                         }
                         AddItemPopUpView(text: "Add Groceries"){
-                            addItemPage = .grocery
-                            openAddPopUp = false
+                            currentPage = .grocery
+                            openPopUp = false
                         }
-                        
                     }
                 }
-                Button(action: {openAddPopUp.toggle()}) {
+                Button(action: {openPopUp.toggle()}) {
                     Rectangle()
                         .opacity(0)
                         .overlay{
-                        VStack{
+                            VStack(alignment:.center){
                             Image(systemName: "plus.circle.fill").resizable().scaledToFit()
-                            Text("Add").font(.caption)
+                                .frame(width:80)
+                            Text("Add").font(.footnote)
                         }
-                    }.frame(width:80,height:60)
+                    }
                 }
+                .frame(width:100,height:60)
             }.foregroundColor(.black)
         
     }
 }
+
 

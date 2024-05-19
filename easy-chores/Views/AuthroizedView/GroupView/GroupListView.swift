@@ -13,9 +13,7 @@ struct GroupListView: View {
                     GroupItemView(isSelected: currentGroup.id == group.id, group: group){currentGroup.id = group.id}
                 }
             }.padding(5)
-        }.task {
-            await fetchGroups()
-        }
+        }.onAppear{Task{await fetchGroups()}}
     }
     
     @MainActor
@@ -25,7 +23,7 @@ struct GroupListView: View {
             groups = fetchedGroups
             currentGroup.id = fetchedGroups.first?.id
         } catch {
-            errorManager.message = error.localizedDescription
+            errorManager.message = "Group List View: error.localizedDescription"
         }
     }
 }

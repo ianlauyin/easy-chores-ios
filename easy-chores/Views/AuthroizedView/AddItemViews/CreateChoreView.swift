@@ -6,11 +6,10 @@ struct CreateChoreView: View {
     private enum Field: Int, CaseIterable {
             case title, detail
         }
-    @FocusState private var focusedField: Field?
+    @FocusState private var focusedField: Field? 
     
     @EnvironmentObject var user : LoginUserViewModel
     @EnvironmentObject private var errorManager : ErrorManager
-    @Binding var addItemPage : AddItemPage
     @State private var title = ""
     @State private var detail = ""
     @StateObject var currentGroup = GroupViewModel()
@@ -21,16 +20,6 @@ struct CreateChoreView: View {
     var body: some View {
         VStack(spacing:15){
             HStack {
-                Button(action: {
-                    addItemPage = .none
-                    focusedField = nil
-                }) {
-                    Image(systemName: "lessthan")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.black)
-                        .frame(height: 20)
-                }.frame(width:20)
                 Spacer()
                 Text("Add Chore")
                     .font(.title)
@@ -74,7 +63,6 @@ struct CreateChoreView: View {
                 Task{
                     focusedField = nil
                     await createChore()
-                    addItemPage = .none
                 }
             }
         }.padding()
@@ -92,7 +80,7 @@ struct CreateChoreView: View {
             let users = try await currentGroup.getGroupUsers()
             self.users = users
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.message = "Create Chore: \(error.localizedDescription)"
         }
     }
     
@@ -115,14 +103,14 @@ struct CreateChoreView: View {
                 let assignedUserIdData = ["user_ids":[selectedUserId]]
                 _ = try await APIManager.request.put(url: "/chores/\(choreId)/users", data: assignedUserIdData)
             }catch{
-                errorManager.message = error.localizedDescription
+                errorManager.message = "Create Chore View: \(error.localizedDescription)"
             }
         }else{
-            errorManager.message = "Wrong Group Id"
+            errorManager.message = "Create Chore View: Wrong Group Id"
         }
     }
 }
 
 #Preview {
-    CreateChoreView(addItemPage: .constant(.chore)).environmentObject(previewLoginUserViewModel)
+    CreateChoreView().environmentObject(previewLoginUserViewModel)
 }

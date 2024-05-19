@@ -14,7 +14,6 @@ enum Field{
 struct CreateGroceryView: View {
     @EnvironmentObject var user : LoginUserViewModel
     @EnvironmentObject private var errorManager : ErrorManager
-    @Binding var addItemPage : AddItemPage
     @State private var name = ""
     @State private var detail = ""
     @StateObject var currentGroup = GroupViewModel()
@@ -25,15 +24,6 @@ struct CreateGroceryView: View {
     var body: some View {
         VStack(spacing:15){
             HStack {
-                Button(action: {
-                    addItemPage = .none
-                }) {
-                    Image(systemName: "lessthan")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.black)
-                        .frame(height: 20)
-                }.frame(width:20)
                 Spacer()
                 Text("Add Grocery")
                     .font(.title)
@@ -64,7 +54,7 @@ struct CreateGroceryView: View {
             CustomButtonView(width: .infinity, text: "Add"){
                 Task{hideKeyboard()
                     await createGroceries()
-                    addItemPage = .none}
+                    }
             }
         }.padding().onTapGesture {
             hideKeyboard()
@@ -90,10 +80,10 @@ struct CreateGroceryView: View {
                     _ = try await APIManager.request.post(url: "/groceries", data: groceryData)
                 }
             }catch{
-                errorManager.message = error.localizedDescription
+                errorManager.message = "Create Grocery View: \(error.localizedDescription)"
             }
         }else{
-            errorManager.message = "Wrong group Id"
+            errorManager.message = "Create Grocery View: Wrong group Id"
         }
     }
     
@@ -105,5 +95,5 @@ struct CreateGroceryView: View {
 }
 
 #Preview {
-    CreateGroceryView(addItemPage: .constant(.grocery)).environmentObject(previewLoginUserViewModel)
+    CreateGroceryView().environmentObject(previewLoginUserViewModel)
 }

@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct LoginView: View {
-    private enum Field: Int, CaseIterable {
-        case email, password
+    private enum Field {
+        case email
+        case password
     }
     @FocusState private var focusedField: Field?
     @EnvironmentObject private var errorManager : ErrorManager
@@ -42,6 +43,7 @@ struct LoginView: View {
             .onTapGesture { focusedField = nil}
         }
     }
+    
     @MainActor
     func handleLogin() async{
         do{
@@ -53,10 +55,10 @@ struct LoginView: View {
                 KeychainManager.keychain.userEmail = email
                 KeychainManager.keychain.userPassword = password
             }else{
-                throw APIError.invalidReponseData
+                errorManager.message = "Login View : Cannot login"
             }
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.message = "Login View: \(error.localizedDescription)"
         }
     }
 }

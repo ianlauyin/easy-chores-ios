@@ -14,7 +14,6 @@ class LoginUserViewModel : ObservableObject{
                 guard let groups = jsonObject as? [[String: Any]] else {
                     throw APIError.invalidReponseData
                 }
-                
                 var groupViewModels: [GroupViewModel] = []
                 for group in groups {
                     let groupViewModel = GroupViewModel(id: group["id"] as? Int, name: group["name"] as? String)

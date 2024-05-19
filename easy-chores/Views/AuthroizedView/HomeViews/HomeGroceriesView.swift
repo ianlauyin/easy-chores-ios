@@ -37,7 +37,7 @@ struct HomeGroceriesView: View {
             let groceries = try await currentGroup.getGroupGroceries()
             self.groceries = groceries
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.message = "HomeGroceriesView: \(error.localizedDescription)"
         }
     }
     

@@ -10,6 +10,7 @@ class GroupViewModel: ObservableObject,Identifiable {
         self.name = name
     }
 
+
     @MainActor
     func getGroupChores() async throws -> [ChoreViewModel] {
         if let id = id{

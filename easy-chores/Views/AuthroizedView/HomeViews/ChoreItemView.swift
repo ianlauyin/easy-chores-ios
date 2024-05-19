@@ -32,7 +32,7 @@ struct ChoreItemView: View {
             }
             handleRemove(choreId)
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.message = "ChoreItemView: \(error.localizedDescription)"
         }
     }
 }

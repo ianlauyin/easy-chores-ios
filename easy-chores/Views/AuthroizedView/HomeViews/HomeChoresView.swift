@@ -23,10 +23,8 @@ struct HomeChoresView: View {
                         ChoreItemView(chore: chore, handleRemove:removeChore)}
                 }.padding(10)
             }.frame(height: 120)
-        }
-        .task(id: currentGroup.id) {
-            await updateChores()
-        }
+        }.task(id:currentGroup.id){
+            await updateChores()}
     }
     
     @MainActor
@@ -35,7 +33,7 @@ struct HomeChoresView: View {
             let chores = try await currentGroup.getGroupChores()
             self.chores = chores
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.message = "Home Chore View: \(error.localizedDescription)"
         }
     }
     
