@@ -2,11 +2,24 @@
 import Foundation
 
 enum APIError: Error {
+    case invalidResponseData
     case invalidURL
     case requestFailed
-    case invalidResponse
-    case invalidData
-    case invalidReponseData
-    case invalidEnv
-    case invalidKeychainData
+    case invalidLoginData
+    
+}
+
+extension APIError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .invalidResponseData:
+            return "Something wrong with the fetched Data."
+        case .invalidURL:
+            return "Invalid URL."
+        case .requestFailed:
+            return "Request is failed."
+        case .invalidLoginData:
+            return "Login Failed."
+        }
+    }
 }

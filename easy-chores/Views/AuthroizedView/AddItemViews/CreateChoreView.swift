@@ -80,33 +80,33 @@ struct CreateChoreView: View {
             let users = try await currentGroup.getGroupUsers()
             self.users = users
         }catch{
-            errorManager.message = "Create Chore: \(error.localizedDescription)"
+            errorManager.error = error
         }
     }
     
     @MainActor
     func createChore() async{
-        if let groupId = currentGroup.id{
-            do{
+        do{
+            if let groupId = currentGroup.id{
                 let choreData : [String:Any] = [
-                    "group_id":groupId,
-                    "title":title,
-                    "detail":detail]
+                        "group_id":groupId,
+                        "title":title,
+                        "detail":detail]
                 let jsonChoreData = try await APIManager.request.post(url: "/chores", data: choreData)
                 let jsonChoreObject = try JSONSerialization.jsonObject(with: jsonChoreData, options: [])
                 guard let chore = jsonChoreObject as? [String: Any] else {
-                    throw APIError.invalidReponseData
+                    throw CustomDataError.invalidJSONForData
                 }
                 guard let choreId = chore["id"] else{
-                    throw APIError.invalidReponseData
+                    throw APIError.invalidResponseData
                 }
                 let assignedUserIdData = ["user_ids":[selectedUserId]]
                 _ = try await APIManager.request.put(url: "/chores/\(choreId)/users", data: assignedUserIdData)
-            }catch{
-                errorManager.message = "Create Chore View: \(error.localizedDescription)"
+            }else{
+                throw CustomDataError.invalidGroupId
             }
-        }else{
-            errorManager.message = "Create Chore View: Wrong Group Id"
+        }catch{
+            errorManager.error = error
         }
     }
 }

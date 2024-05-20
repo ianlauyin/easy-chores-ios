@@ -12,12 +12,11 @@ class GroupViewModel: ObservableObject,Identifiable {
 
     @MainActor
     func getGroupUsers() async throws -> [UserViewModel]{
-        do{
             if let id = id{
                 let jsonData = try await APIManager.request.get(url: "/groups/\(id)/users")
                 let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
                 guard let users = jsonObject as? [[String: Any]] else {
-                    throw APIError.invalidReponseData
+                    throw APIError.invalidResponseData
                 }
                 var userViewModels:[UserViewModel]=[]
                 for user in users{
@@ -29,21 +28,17 @@ class GroupViewModel: ObservableObject,Identifiable {
                 }
                 return userViewModels
             }else{
-                throw CustomError.invalidGroupId
+                throw CustomDataError.invalidGroupId
             }
-        }catch{
-            throw error
-        }
     }
 
     @MainActor
     func getGroupChores() async throws -> [ChoreViewModel] {
-        if let id = id{
-            do {
+            if let id = id{
                 let jsonData = try await APIManager.request.get(url: "/groups/\(id)/chores")
                 let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
                 guard let chores = jsonObject as? [[String: Any]] else {
-                    throw APIError.invalidReponseData
+                    throw APIError.invalidResponseData
                 }
                 var choreViewModels:[ChoreViewModel]=[]
                 for chore in chores{
@@ -55,22 +50,18 @@ class GroupViewModel: ObservableObject,Identifiable {
                     choreViewModels.append(choreViewModel)
                 }
                 return choreViewModels
-            } catch {
-                throw APIError.invalidReponseData
+            }else{
+                throw CustomDataError.invalidGroupId
             }
-        }else{
-            throw APIError.invalidData
-        }
     }
     
     @MainActor
     func getGroupGroceries() async throws -> [GroceryViewModel] {
         if let id = id{
-            do {
                 let jsonData = try await APIManager.request.get(url: "/groups/\(id)/groceries")
                 let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
                 guard let groceries = jsonObject as? [[String: Any]] else {
-                    throw APIError.invalidReponseData
+                    throw APIError.invalidResponseData
                 }
                 var groceryViewModels:[GroceryViewModel]=[]
                 for grocery in groceries{
@@ -83,11 +74,8 @@ class GroupViewModel: ObservableObject,Identifiable {
                     groceryViewModels.append(groceryViewModel)
                 }
                 return groceryViewModels
-            } catch {
-                throw error
-            }
         }else{
-            throw APIError.invalidData
+            throw CustomDataError.invalidGroupId
         }
     }
 }

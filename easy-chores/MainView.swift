@@ -13,7 +13,7 @@ struct MainView: View {
             } else {
                 LoginView()
             }
-            if errorManager.message != nil{
+            if errorManager.error != nil{
                 ErrorView()
             }
         }.environmentObject(user)

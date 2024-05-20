@@ -31,11 +31,7 @@ struct AuthorizedView: View {
                 Text("notice")
                 Spacer()
             }
-            case .profile:VStack{
-                Spacer()
-                LogoutButtonView()
-                Spacer()
-            }
+            case .profile: ProfileView()
             case .chore: CreateChoreView()
             case .grocery: CreateGroceryView()
             }

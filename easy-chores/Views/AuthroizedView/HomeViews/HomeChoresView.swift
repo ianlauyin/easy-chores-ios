@@ -37,7 +37,7 @@ struct HomeChoresView: View {
             let chores = try await currentGroup.getGroupChores()
             self.chores = chores
         }catch{
-            errorManager.message = "Home Chore View: \(error.localizedDescription)"
+            errorManager.error = error
         }
     }
     

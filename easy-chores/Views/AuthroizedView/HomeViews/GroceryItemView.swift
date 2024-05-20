@@ -25,11 +25,11 @@ struct GroceryItemView: View {
         do{
             _ = try await grocery.doneGrocery()
             guard let groceryId = grocery.id else{
-                throw CustomError.invalidGroceryId
+                throw CustomDataError.invalidGroceryId
             }
             handleRemove(groceryId)
         }catch{
-            errorManager.message = "GroceryItemView: \(error.localizedDescription)"
+            errorManager.error = error
         }
     }
 }

@@ -39,7 +39,7 @@ struct RegisterView: View {
     func handleRegister()async{
         do{
             if email.isEmpty || password.isEmpty || username.isEmpty{
-                throw APIError.invalidData
+                throw CustomDataError.invalidInputdata
             }
             let userData = try await APIManager.request.register(email: email, password: password,username:username)
             if let userId = userData["user_id"] as? Int,
@@ -49,10 +49,10 @@ struct RegisterView: View {
                 KeychainManager.keychain.userEmail = email
                 KeychainManager.keychain.userPassword = password
             }else{
-                throw APIError.invalidData
+                throw APIError.invalidResponseData
             }
         }catch{
-            errorManager.message = "Login View: \(error.localizedDescription)"
+            errorManager.error = error
         }
     }
 }

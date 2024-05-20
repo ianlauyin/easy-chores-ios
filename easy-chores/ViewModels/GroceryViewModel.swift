@@ -21,14 +21,10 @@ class GroceryViewModel: ObservableObject , Identifiable{
     @MainActor
     func doneGrocery() async throws ->Void{
         if let id = id{
-            do {
-                _ = try await APIManager.request.delete(url: "/chores/\(id)")
-                return
-            } catch {
-                throw error
-            }
+            _ = try await APIManager.request.delete(url: "/chores/\(id)")
+            return
         }else{
-            throw APIError.invalidData
+            throw CustomDataError.invalidGroceryId
         }
     }
 }

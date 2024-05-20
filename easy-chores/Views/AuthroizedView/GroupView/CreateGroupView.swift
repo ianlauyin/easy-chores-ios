@@ -24,12 +24,12 @@ struct CreateGroupView: View {
             if let userId = user.id {
                 requestData["user_id"] = userId
             }else{
-                throw APIError.invalidData
+                throw CustomDataError.invalidUserId
             }
             _ = try await APIManager.request.post(url: "/groups", data: requestData)
             presentationMode.wrappedValue.dismiss()
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.error = error
         }
     }
 }

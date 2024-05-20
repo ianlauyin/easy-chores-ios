@@ -27,7 +27,7 @@ struct GroupListView: View {
             groups = fetchedGroups
             currentGroup.id = fetchedGroups.first?.id
         } catch {
-            errorManager.message = "Group List View: error.localizedDescription"
+            errorManager.error = error
         }
     }
 }

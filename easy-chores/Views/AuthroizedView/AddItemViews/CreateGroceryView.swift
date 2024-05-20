@@ -68,22 +68,25 @@ struct CreateGroceryView: View {
     
     @MainActor
     func createGroceries() async{
-        if let groupId = currentGroup.id,
-           let userId = user.id{
-            do{
-                var groceryData : [String:Any] = [
-                    "group_id":groupId,
-                    "user_id":userId]
-                for grocery in groceries{
-                    groceryData["name"]=grocery.name
-                    groceryData["quantity"]=grocery.quantity
-                    _ = try await APIManager.request.post(url: "/groceries", data: groceryData)
+        do{
+            if let groupId = currentGroup.id{
+                if let userId = user.id{
+                    var groceryData : [String:Any] = [
+                        "group_id":groupId,
+                        "user_id":userId]
+                    for grocery in groceries{
+                        groceryData["name"]=grocery.name
+                        groceryData["quantity"]=grocery.quantity
+                        _ = try await APIManager.request.post(url: "/groceries", data: groceryData)
+                    }
+                }else{
+                    throw CustomDataError.invalidUserId
                 }
-            }catch{
-                errorManager.message = "Create Grocery View: \(error.localizedDescription)"
+            }else{
+                throw CustomDataError.invalidGroupId
             }
-        }else{
-            errorManager.message = "Create Grocery View: Wrong group Id"
+        }catch{
+            errorManager.error = error
         }
     }
     

@@ -25,14 +25,10 @@ class ChoreViewModel: ObservableObject , Identifiable{
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let completedDateString = dateFormatter.string(from: completedDate)
         if let id = id{
-            do {
-                _ = try await APIManager.request.put(url: "/chores/\(id)", data: ["completed_date":completedDateString])
-                return
-            } catch {
-                throw error
-            }
+            _ = try await APIManager.request.put(url: "/chores/\(id)", data: ["completed_date":completedDateString])
+            return
         }else{
-            throw APIError.invalidData
+            throw CustomDataError.invalidChoreId
         }
     }
     

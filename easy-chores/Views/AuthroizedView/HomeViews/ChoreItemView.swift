@@ -28,11 +28,11 @@ struct ChoreItemView: View {
         do{
             _ = try await chore.doneChore(completedDate: Date.now)
             guard let choreId = chore.id else{
-                throw CustomError.invalidChoreId
+                throw CustomDataError.invalidChoreId
             }
             handleRemove(choreId)
         }catch{
-            errorManager.message = "ChoreItemView: \(error.localizedDescription)"
+            errorManager.error = error
         }
     }
 }

@@ -41,7 +41,7 @@ struct EditGroupView: View {
             let users = try await currentGroup.getGroupUsers()
             memberList = users
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.error = error
         }
     }
     
@@ -54,10 +54,10 @@ struct EditGroupView: View {
                 email = ""
             }
             else{
-                throw APIError.invalidData
+                throw CustomDataError.invalidGroupId
             }
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.error = error
         }
     }
     
@@ -70,10 +70,10 @@ struct EditGroupView: View {
                 await updateUserList()
             }
             else{
-                throw APIError.invalidData
+                throw CustomDataError.invalidGroupId
             }
         }catch{
-            errorManager.message = error.localizedDescription
+            errorManager.error = error
         }
     }
 }

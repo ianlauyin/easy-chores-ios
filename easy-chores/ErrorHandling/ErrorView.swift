@@ -10,9 +10,10 @@ struct ErrorView: View {
             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             .overlay(){
                 VStack(spacing: 20){
-                Text(errorManager.message ?? "Somethings is wrong")
+                    Text(errorManager.error?.localizedDescription ?? "Somethings is wrong")
                         .font(.headline)
-                Button(action:{errorManager.message = nil}){
+                    Text("Please try again later.")
+                Button(action:{errorManager.error = nil}){
                     Text("Okay")
                 }
             }

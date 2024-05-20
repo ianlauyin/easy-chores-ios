@@ -55,10 +55,10 @@ struct LoginView: View {
                 KeychainManager.keychain.userEmail = email
                 KeychainManager.keychain.userPassword = password
             }else{
-                errorManager.message = "Login View : Cannot login"
+                throw APIError.invalidResponseData
             }
         }catch{
-            errorManager.message = "Login View: \(error.localizedDescription)"
+            errorManager.error = error
         }
     }
 }

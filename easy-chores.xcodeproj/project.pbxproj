@@ -46,8 +46,9 @@
 		D28615112BF38F05009D8D24 /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615102BF38F05009D8D24 /* GroupListView.swift */; };
 		D28615132BF38F36009D8D24 /* GroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615122BF38F36009D8D24 /* GroupItemView.swift */; };
 		D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */; };
-		D28F8D632BF65A1B00BCE419 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D622BF65A1B00BCE419 /* CustomError.swift */; };
+		D28F8D632BF65A1B00BCE419 /* CustomDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D622BF65A1B00BCE419 /* CustomDataError.swift */; };
 		D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */; };
+		D2B5046E2BFBB5CC00C6949D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5046D2BFBB5CC00C6949D /* ProfileView.swift */; };
 		D2F7F6DC2BF5C19400DDA991 /* GroceryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */; };
 		D2F7F6DE2BF5C3D600DDA991 /* HomeGroceriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */; };
 		D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */; };
@@ -112,8 +113,9 @@
 		D28615102BF38F05009D8D24 /* GroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListView.swift; sourceTree = "<group>"; };
 		D28615122BF38F36009D8D24 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
 		D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
-		D28F8D622BF65A1B00BCE419 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomError.swift; path = ../CustomError.swift; sourceTree = "<group>"; };
+		D28F8D622BF65A1B00BCE419 /* CustomDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomDataError.swift; path = ../CustomDataError.swift; sourceTree = "<group>"; };
 		D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPopUpView.swift; sourceTree = "<group>"; };
+		D2B5046D2BFBB5CC00C6949D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = "<group>"; };
 		D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroceriesView.swift; sourceTree = "<group>"; };
 		D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemView.swift; sourceTree = "<group>"; };
@@ -171,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				D231EF602BF91254002DE76A /* APIError.swift */,
-				D28F8D622BF65A1B00BCE419 /* CustomError.swift */,
+				D28F8D622BF65A1B00BCE419 /* CustomDataError.swift */,
 				D231EF642BF9129B002DE76A /* ErrorView.swift */,
 				D231EF662BF912BF002DE76A /* ErrorManager.swift */,
 			);
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				D231EF6B2BF9222D002DE76A /* LogoutButtonView.swift */,
+				D2B5046D2BFBB5CC00C6949D /* ProfileView.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -472,7 +475,7 @@
 				D227C6152BF3D4BB00F81355 /* AuthorizedView.swift in Sources */,
 				D25612762BFA468700CF7186 /* EditGroupView.swift in Sources */,
 				D227C61C2BF49F8A00F81355 /* UserViewModel.swift in Sources */,
-				D28F8D632BF65A1B00BCE419 /* CustomError.swift in Sources */,
+				D28F8D632BF65A1B00BCE419 /* CustomDataError.swift in Sources */,
 				D26ED51A2BF750C600AA9FC9 /* CreateGroceryItemView.swift in Sources */,
 				D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */,
 				D25612722BFA444F00CF7186 /* GroupMenuView.swift in Sources */,
@@ -487,6 +490,7 @@
 				D231EF592BF862D6002DE76A /* RegisterView.swift in Sources */,
 				D25158EC2BEF70110085870B /* MainView.swift in Sources */,
 				D231EF692BF91A36002DE76A /* LoginUserViewModel.swift in Sources */,
+				D2B5046E2BFBB5CC00C6949D /* ProfileView.swift in Sources */,
 				D26ED51C2BF7697100AA9FC9 /* Extension.swift in Sources */,
 				D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */,
 				D227C6252BF5031400F81355 /* ChoreViewModel.swift in Sources */,
