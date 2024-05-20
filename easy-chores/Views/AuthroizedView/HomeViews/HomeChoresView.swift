@@ -18,10 +18,14 @@ struct HomeChoresView: View {
                 Spacer()
             }
             ScrollView(.horizontal, showsIndicators: true){
-                HStack(alignment: .top,spacing: 16){
-                    ForEach(chores){ chore in
-                        ChoreItemView(chore: chore, handleRemove:removeChore)}
-                }.padding(10)
+                if chores.isEmpty{
+                   Text("This Group have no chore yet.")
+                }else{
+                    HStack(alignment: .top,spacing: 16){
+                        ForEach(chores){ chore in
+                            ChoreItemView(chore: chore, handleRemove:removeChore)}
+                    }.padding(10)
+                }
             }.frame(height: 120)
         }.task(id:currentGroup.id){
             await updateChores()}

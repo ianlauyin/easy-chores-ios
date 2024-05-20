@@ -18,10 +18,14 @@ struct HomeGroceriesView: View {
                 
             }
             ScrollView(.vertical, showsIndicators: true){
-                VStack{
-                    ForEach(groceries){ grocery in
-                        GroceryItemView(grocery:grocery,handleRemove:removeGrocery)
-                        Divider()
+                if groceries.isEmpty {
+                   Text("This Group have no grocery yet.")
+                }else{
+                    VStack{
+                        ForEach(groceries){ grocery in
+                            GroceryItemView(grocery:grocery,handleRemove:removeGrocery)
+                            Divider()
+                        }
                     }
                 }
             }

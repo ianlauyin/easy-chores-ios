@@ -9,8 +9,12 @@ struct GroupListView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{
-                ForEach(groups) { group in
-                    GroupItemView(isSelected: currentGroup.id == group.id, group: group){currentGroup.id = group.id}
+                if groups.isEmpty{
+                    Text("You don't have any group yet")
+                }else{
+                    ForEach(groups) { group in
+                        GroupItemView(isSelected: currentGroup.id == group.id, group: group){currentGroup.id = group.id}
+                    }
                 }
             }.padding(5)
         }.onAppear{Task{await fetchGroups()}}

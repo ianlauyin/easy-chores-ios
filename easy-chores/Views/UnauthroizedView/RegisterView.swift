@@ -19,7 +19,7 @@ struct RegisterView: View {
                 .textFieldStyle(.roundedBorder)
             TextField("Email", text:$email)
                 .textFieldStyle(.roundedBorder)
-            TextField("Password", text:$password)
+            SecureField("Password", text:$password)
                 .textFieldStyle(.roundedBorder)
             HStack{
                 Text("Already a member?")
@@ -38,7 +38,7 @@ struct RegisterView: View {
     @MainActor
     func handleRegister()async{
         do{
-            if (email.count == 0 || password.count == 0 || username.count == 0){
+            if email.isEmpty || password.isEmpty || username.isEmpty{
                 throw APIError.invalidData
             }
             let userData = try await APIManager.request.register(email: email, password: password,username:username)

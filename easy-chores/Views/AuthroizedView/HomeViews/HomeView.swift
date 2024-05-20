@@ -14,8 +14,14 @@ struct HomeView: View {
                     if user.id != nil{
                         HStack{
                             GroupListView(currentGroup:currentGroup)
-                            MenuButton{
-                                isGroupMenuOpen = true
+                            if currentGroup.id != nil {
+                                MenuButton{
+                                    isGroupMenuOpen = true
+                                }
+                            }else{
+                                NavigationLink(destination: CreateGroupView()){
+                                    Text("Create")
+                                }
                             }
                         }
                         if currentGroup.id != nil {
