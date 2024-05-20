@@ -35,6 +35,7 @@
 		D25612722BFA444F00CF7186 /* GroupMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612712BFA444F00CF7186 /* GroupMenuView.swift */; };
 		D25612742BFA467300CF7186 /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612732BFA467300CF7186 /* CreateGroupView.swift */; };
 		D25612762BFA468700CF7186 /* EditGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612752BFA468700CF7186 /* EditGroupView.swift */; };
+		D25612782BFA717D00CF7186 /* GroupUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612772BFA717D00CF7186 /* GroupUserView.swift */; };
 		D26ED50C2BF6898E00AA9FC9 /* AddButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */; };
 		D26ED50E2BF6948D00AA9FC9 /* CreateChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */; };
 		D26ED5132BF7432700AA9FC9 /* CreateGroceryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26ED5122BF7432600AA9FC9 /* CreateGroceryView.swift */; };
@@ -100,6 +101,7 @@
 		D25612712BFA444F00CF7186 /* GroupMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMenuView.swift; sourceTree = "<group>"; };
 		D25612732BFA467300CF7186 /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
 		D25612752BFA468700CF7186 /* EditGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupView.swift; sourceTree = "<group>"; };
+		D25612772BFA717D00CF7186 /* GroupUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUserView.swift; sourceTree = "<group>"; };
 		D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonContainerView.swift; sourceTree = "<group>"; };
 		D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChoreView.swift; sourceTree = "<group>"; };
 		D26ED5122BF7432600AA9FC9 /* CreateGroceryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroceryView.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				D28615122BF38F36009D8D24 /* GroupItemView.swift */,
 				D25612732BFA467300CF7186 /* CreateGroupView.swift */,
 				D25612752BFA468700CF7186 /* EditGroupView.swift */,
+				D25612772BFA717D00CF7186 /* GroupUserView.swift */,
 			);
 			path = GroupView;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				D26ED51C2BF7697100AA9FC9 /* Extension.swift in Sources */,
 				D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */,
 				D227C6252BF5031400F81355 /* ChoreViewModel.swift in Sources */,
+				D25612782BFA717D00CF7186 /* GroupUserView.swift in Sources */,
 				D25612742BFA467300CF7186 /* CreateGroupView.swift in Sources */,
 				D26ED5132BF7432700AA9FC9 /* CreateGroceryView.swift in Sources */,
 				D231EF672BF912BF002DE76A /* ErrorManager.swift in Sources */,

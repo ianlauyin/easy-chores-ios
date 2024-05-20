@@ -4,6 +4,7 @@ import SwiftUI
 struct RegisterView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var user : LoginUserViewModel
+    @EnvironmentObject var errorManager : ErrorManager
     @State private var email = ""
     @State private var password = ""
     @State private var username = ""
@@ -36,7 +37,23 @@ struct RegisterView: View {
     }
     @MainActor
     func handleRegister()async{
-        
+        do{
+            if (email.count == 0 || password.count == 0 || username.count == 0){
+                throw APIError.invalidData
+            }
+            let userData = try await APIManager.request.register(email: email, password: password,username:username)
+            if let userId = userData["user_id"] as? Int,
+               let username = userData["username"] as? String{
+                user.id = userId
+                user.username = username
+                KeychainManager.keychain.userEmail = email
+                KeychainManager.keychain.userPassword = password
+            }else{
+                throw APIError.invalidData
+            }
+        }catch{
+            errorManager.message = "Login View: \(error.localizedDescription)"
+        }
     }
 }
 

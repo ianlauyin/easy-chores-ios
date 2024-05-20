@@ -5,6 +5,50 @@ import Foundation
 class APIManager {
     static let request = APIManager()
     
+    func register(email:String,password:String,username:String) async throws ->[String:Any]{
+        do{
+            guard let BACKEND_URL = ProcessInfo.processInfo.environment["BACKEND_URL"] else {
+                throw APIError.invalidEnv
+            }
+            guard let urlInstance = URL(string: BACKEND_URL + "/users/register") else {
+                throw APIError.invalidURL
+            }
+            var request = URLRequest(url:urlInstance)
+            request.httpMethod = "POST"
+            let registerData = ["email":email,"password":password,"username":username]
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: registerData) else {
+                throw APIError.invalidKeychainData
+            }
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = jsonData
+            
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                throw APIError.requestFailed
+            }
+            
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            guard var userData = jsonObject as? [String: Any] else {
+                throw APIError.invalidReponseData
+            }
+            
+            let checkKeys = ["user_id","username","access_token"]
+            if checkKeys.allSatisfy({ key in
+                userData[key] != nil
+            }) {
+                KeychainManager.keychain.accessToken = userData["access_token"] as? String
+            } else {
+                throw APIError.invalidReponseData
+            }
+            userData.removeValue(forKey: "access_token")
+            return userData
+        }catch{
+            throw error
+        }
+    }
+    
     func login(email:String,password:String) async throws->[String:Any]{
         do{
             guard let BACKEND_URL = ProcessInfo.processInfo.environment["BACKEND_URL"] else {

@@ -10,6 +10,31 @@ class GroupViewModel: ObservableObject,Identifiable {
         self.name = name
     }
 
+    @MainActor
+    func getGroupUsers() async throws -> [UserViewModel]{
+        do{
+            if let id = id{
+                let jsonData = try await APIManager.request.get(url: "/groups/\(id)/users")
+                let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                guard let users = jsonObject as? [[String: Any]] else {
+                    throw APIError.invalidReponseData
+                }
+                var userViewModels:[UserViewModel]=[]
+                for user in users{
+                    let userViewModel = UserViewModel(
+                        id: user["id"] as? Int,
+                        username: user["username"] as? String,
+                        email: user["email"] as? String)
+                    userViewModels.append(userViewModel)
+                }
+                return userViewModels
+            }else{
+                throw CustomError.invalidGroupId
+            }
+        }catch{
+            throw error
+        }
+    }
 
     @MainActor
     func getGroupChores() async throws -> [ChoreViewModel] {
@@ -30,31 +55,6 @@ class GroupViewModel: ObservableObject,Identifiable {
                     choreViewModels.append(choreViewModel)
                 }
                 return choreViewModels
-            } catch {
-                throw APIError.invalidReponseData
-            }
-        }else{
-            throw APIError.invalidData
-        }
-    }
-    
-    @MainActor
-    func getGroupUsers() async throws -> [UserViewModel]{
-        if let id = id{
-            do {
-                let jsonData = try await APIManager.request.get(url: "/groups/\(id)/users")
-                let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
-                guard let users = jsonObject as? [[String: Any]] else {
-                    throw APIError.invalidReponseData
-                }
-                var userViewModels:[UserViewModel]=[]
-                for user in users{
-                    let userViewModel = UserViewModel(
-                        id: user["id"] as? Int,
-                        username: user["username"] as? String)
-                    userViewModels.append(userViewModel)
-                }
-                return userViewModels
             } catch {
                 throw APIError.invalidReponseData
             }

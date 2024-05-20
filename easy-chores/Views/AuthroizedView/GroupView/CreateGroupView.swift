@@ -22,7 +22,7 @@ struct CreateGroupView: View {
         do{
             var requestData : [String:Any] = ["name":name]
             if let userId = user.id {
-                requestData["user_id"] = user.id
+                requestData["user_id"] = userId
             }else{
                 throw APIError.invalidData
             }
