@@ -1,9 +1,4 @@
-//
-//  easy_choresUITests.swift
-//  easy-choresUITests
-//
-//  Created by Claire Chu on 11/5/2024.
-//
+
 
 import XCTest
 

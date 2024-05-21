@@ -27,9 +27,7 @@
 		D25158EC2BEF70110085870B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158EB2BEF70110085870B /* MainView.swift */; };
 		D25158EE2BEF701D0085870B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25158ED2BEF701D0085870B /* Assets.xcassets */; };
 		D25158F12BEF701D0085870B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25158F02BEF701D0085870B /* Preview Assets.xcassets */; };
-		D25158FB2BEF701F0085870B /* easy_choresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25158FA2BEF701F0085870B /* easy_choresTests.swift */; };
 		D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159042BEF701F0085870B /* easy_choresUITests.swift */; };
-		D25159072BEF701F0085870B /* easy_choresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */; };
 		D252F6142BF8446F004272AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252F6132BF8446F004272AA /* LoginView.swift */; };
 		D25612702BFA417F00CF7186 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256126F2BFA417F00CF7186 /* MenuButton.swift */; };
 		D25612722BFA444F00CF7186 /* GroupMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612712BFA444F00CF7186 /* GroupMenuView.swift */; };
@@ -49,6 +47,8 @@
 		D28F8D632BF65A1B00BCE419 /* CustomDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D622BF65A1B00BCE419 /* CustomDataError.swift */; };
 		D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */; };
 		D2B5046E2BFBB5CC00C6949D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5046D2BFBB5CC00C6949D /* ProfileView.swift */; };
+		D2B504842BFCDBA900C6949D /* ErrorViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B504832BFCDBA900C6949D /* ErrorViewTest.swift */; };
+		D2B504862BFCDBD200C6949D /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = D2B504852BFCDBD200C6949D /* ViewInspector */; };
 		D2F7F6DC2BF5C19400DDA991 /* GroceryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */; };
 		D2F7F6DE2BF5C3D600DDA991 /* HomeGroceriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */; };
 		D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */; };
@@ -93,10 +93,8 @@
 		D25158ED2BEF701D0085870B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D25158F02BEF701D0085870B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D25158F62BEF701F0085870B /* easy-choresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easy-choresTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25158FA2BEF701F0085870B /* easy_choresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresTests.swift; sourceTree = "<group>"; };
 		D25159002BEF701F0085870B /* easy-choresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "easy-choresUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25159042BEF701F0085870B /* easy_choresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITests.swift; sourceTree = "<group>"; };
-		D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D252F6132BF8446F004272AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D256126F2BFA417F00CF7186 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		D25612712BFA444F00CF7186 /* GroupMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMenuView.swift; sourceTree = "<group>"; };
@@ -116,6 +114,8 @@
 		D28F8D622BF65A1B00BCE419 /* CustomDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomDataError.swift; path = ../CustomDataError.swift; sourceTree = "<group>"; };
 		D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPopUpView.swift; sourceTree = "<group>"; };
 		D2B5046D2BFBB5CC00C6949D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D2B504822BFCDBA900C6949D /* easy-choresTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "easy-choresTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2B504832BFCDBA900C6949D /* ErrorViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewTest.swift; sourceTree = "<group>"; };
 		D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = "<group>"; };
 		D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroceriesView.swift; sourceTree = "<group>"; };
 		D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemView.swift; sourceTree = "<group>"; };
@@ -134,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B504862BFCDBD200C6949D /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +250,7 @@
 		D25158F92BEF701F0085870B /* easy-choresTests */ = {
 			isa = PBXGroup;
 			children = (
-				D25158FA2BEF701F0085870B /* easy_choresTests.swift */,
+				D2B504812BFCDB4900C6949D /* ErrorHandling */,
 			);
 			path = "easy-choresTests";
 			sourceTree = "<group>";
@@ -258,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				D25159042BEF701F0085870B /* easy_choresUITests.swift */,
-				D25159062BEF701F0085870B /* easy_choresUITestsLaunchTests.swift */,
 			);
 			path = "easy-choresUITests";
 			sourceTree = "<group>";
@@ -328,6 +328,15 @@
 			path = AddItemViews;
 			sourceTree = "<group>";
 		};
+		D2B504812BFCDB4900C6949D /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				D2B504832BFCDBA900C6949D /* ErrorViewTest.swift */,
+				D2B504822BFCDBA900C6949D /* easy-choresTests-Bridging-Header.h */,
+			);
+			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +374,9 @@
 				D25158F82BEF701F0085870B /* PBXTargetDependency */,
 			);
 			name = "easy-choresTests";
+			packageProductDependencies = (
+				D2B504852BFCDBD200C6949D /* ViewInspector */,
+			);
 			productName = "easy-choresTests";
 			productReference = D25158F62BEF701F0085870B /* easy-choresTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -402,6 +414,7 @@
 					};
 					D25158F52BEF701F0085870B = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 						TestTargetID = D25158E52BEF70110085870B;
 					};
 					D25158FF2BEF701F0085870B = {
@@ -421,6 +434,7 @@
 			mainGroup = D25158DD2BEF70110085870B;
 			packageReferences = (
 				D231EF5A2BF8F582002DE76A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				D2B504802BFCDAF900C6949D /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			productRefGroup = D25158E72BEF70110085870B /* Products */;
 			projectDirPath = "";
@@ -510,7 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25158FB2BEF701F0085870B /* easy_choresTests.swift in Sources */,
+				D2B504842BFCDBA900C6949D /* ErrorViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +532,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25159072BEF701F0085870B /* easy_choresUITestsLaunchTests.swift in Sources */,
 				D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,6 +736,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4GZR9W59M5;
@@ -732,6 +746,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "IanLau.easy-choresTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "easy-choresTests/ErrorHandling/easy-choresTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/easy-chores.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/easy-chores";
@@ -743,6 +759,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4GZR9W59M5;
@@ -752,6 +769,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "IanLau.easy-choresTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "easy-choresTests/ErrorHandling/easy-choresTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/easy-chores.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/easy-chores";
@@ -844,6 +862,14 @@
 				minimumVersion = 4.0.1;
 			};
 		};
+		D2B504802BFCDAF900C6949D /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.11;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -851,6 +877,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D231EF5A2BF8F582002DE76A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		D2B504852BFCDBD200C6949D /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2B504802BFCDAF900C6949D /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
