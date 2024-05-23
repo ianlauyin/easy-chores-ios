@@ -14,7 +14,7 @@ struct CustomButtonView: View {
                 .fill(.customPrimary)
                 .frame(width:width,height:height)
         }.overlay{
-            Text(text).font(.subheadline).foregroundColor(.white)
+            Text(text).font(.system(size: 16)).foregroundColor(.white).bold()
         }
     }
 }
