@@ -16,7 +16,7 @@ struct GroceryItemView: View {
                 }
             }
             Spacer()
-            CustomButtonView(width:60,text: "Done"){Task{await removeGrocery()}}
+            CustomButtonView(width:60, height: 40,text: "Done"){Task{await removeGrocery()}}
         }.padding(.trailing,20).frame(height:40)
     }
     

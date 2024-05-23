@@ -51,7 +51,7 @@ struct CreateGroceryView: View {
                     }
                 }.padding()
             }
-            CustomButtonView(width: .infinity, text: "Add"){
+            CustomButtonView(width: .infinity, height: 40, text: "Add"){
                 Task{hideKeyboard()
                     await createGroceries()
                     }

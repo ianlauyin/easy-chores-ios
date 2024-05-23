@@ -59,7 +59,7 @@ struct CreateChoreView: View {
                     .focused($focusedField, equals: .detail)
                 }
             Spacer()
-            CustomButtonView(width: .infinity, text: "Add"){
+            CustomButtonView(width: .infinity, height: 40, text: "Add"){
                 Task{
                     focusedField = nil
                     await createChore()

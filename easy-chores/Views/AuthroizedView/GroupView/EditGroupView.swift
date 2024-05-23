@@ -14,7 +14,7 @@ struct EditGroupView: View {
         VStack{
             GroupListView(currentGroup: currentGroup)
             TextField("Add user by email", text : $email).textFieldStyle(.roundedBorder)
-            CustomButtonView(width: .infinity, text: "Add"){
+            CustomButtonView(width: .infinity, height: 40, text: "Add"){
                 Task{await handleAdd()}
             }
             VStack(alignment:.trailing){

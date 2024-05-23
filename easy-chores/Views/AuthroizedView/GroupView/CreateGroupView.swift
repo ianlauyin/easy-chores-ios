@@ -10,7 +10,7 @@ struct CreateGroupView: View {
         VStack{
             TextField("Group name", text : $name).textFieldStyle(.roundedBorder)
             Spacer()
-            CustomButtonView(width: .infinity, text: "Create Group"){
+            CustomButtonView(width: .infinity, height: 40, text: "Create Group"){
                 Task{await handleClick()}
             }
         }.padding()

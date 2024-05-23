@@ -8,7 +8,7 @@ struct easy_choresApp: App {
         WindowGroup {
             ZStack{
                 MainView()
-                
+                    .environment(\.font, Font.custom("Poppins-Regular", size: 14))
             }
         }
     }

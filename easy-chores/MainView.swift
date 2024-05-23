@@ -22,5 +22,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainView().environment(\.font, Font.custom("Poppins-Regular",size:14))
 }

@@ -13,23 +13,21 @@ struct RegisterView: View {
         VStack(spacing: 10){
             HStack{
                 Text("Let's create your account").font(.title2).bold()
+                    .foregroundStyle(.customAccent)
                 Spacer()
             }.padding(.vertical,30)
-            TextField("User Name", text:$username)
-                .textFieldStyle(.roundedBorder)
-            TextField("Email", text:$email)
-                .textFieldStyle(.roundedBorder)
-            SecureField("Password", text:$password)
-                .textFieldStyle(.roundedBorder)
+            CustomTextFieldView(input: $username, placeholder: "User Name")
+            CustomTextFieldView(input: $email, placeholder: "Email")
+            CustomTextFieldView(input: $password, placeholder: "Password",secure: true)
             HStack{
-                Text("Already a member?")
-                Text("Log in").bold().onTapGesture {
+                Text("Already a member?").foregroundStyle(.gray)
+                Text("Log in").bold().foregroundStyle(.customPrimary).onTapGesture {
                     presentationMode.wrappedValue.dismiss()
                 }
             }.font(.caption)
                 .padding(20)
             Spacer()
-            CustomButtonView(width: .infinity, text: "Sign Up"){
+            CustomButtonView(width: 340, height: 48, text: "Sign Up"){
                 Task{await handleRegister()}
             }
         }.padding()
@@ -58,5 +56,5 @@ struct RegisterView: View {
 }
 
 #Preview {
-    RegisterView()
+    RegisterView().environment(\.font, Font.custom("Poppins-Regular",size:14))
 }

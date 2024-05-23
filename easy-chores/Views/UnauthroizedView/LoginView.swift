@@ -1,11 +1,7 @@
 import SwiftUI
 
+
 struct LoginView: View {
-    private enum Field {
-        case email
-        case password
-    }
-    @FocusState private var focusedField: Field?
     @EnvironmentObject private var errorManager : ErrorManager
     @EnvironmentObject var user : LoginUserViewModel
     @State private var email = ""
@@ -15,33 +11,25 @@ struct LoginView: View {
         NavigationStack{
             VStack(spacing: 10){
                 Spacer()
-                Image(.logoNoBackground)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 200)
+                Image(.easychoresLogo)
                 Spacer()
-                TextField("Email", text:$email)
-                    .textFieldStyle(.roundedBorder)
-                    .focused($focusedField, equals: .email)
-                SecureField("Password", text:$password)
-                    .textFieldStyle(.roundedBorder)
-                    .focused($focusedField, equals: .password)
+                CustomTextFieldView(input: $email, placeholder: "Email")
+                CustomTextFieldView(input: $password, placeholder: "Password",secure: true)
+                Spacer()
                 HStack{
                     Text("Don't have an account?")
                         .foregroundStyle(.gray)
                     NavigationLink(destination: RegisterView()){
                         Text("Sign Up").bold()
-                            
-                    }.foregroundStyle(.black)
+                    }.foregroundStyle(.customPrimary)
                 }.font(.caption)
                     .padding(10)
                 Spacer()
-                CustomButtonView(width: .infinity, text: "Login"){
+                CustomButtonView(width: 340,height:48, text: "Login"){
                     Task{await handleLogin()}
                 }.padding(.vertical,20)
-            }.padding()
-            .onTapGesture { focusedField = nil}
-        }
+            }.padding(25)
+        }.onTapGesture {hideKeyboard()}
     }
     
     @MainActor
