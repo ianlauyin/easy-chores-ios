@@ -2,39 +2,37 @@
 import SwiftUI
 
 struct AddButtonContainerView: View {
-    @State var openPopUp : Bool = false
+    @State var openSlide : Bool = false
     @Binding var currentPage : CurrentPage
     
     var body: some View {
-        VStack(alignment: .center){
+        ZStack{
+            VStack(alignment: .center){
                 Spacer()
-                if openPopUp {
-                    HStack(spacing:20){
-                        AddItemPopUpView(text: "Add Chores"){
-                            currentPage = .chore
-                            openPopUp = false
-                        }
-                        AddItemPopUpView(text: "Add Groceries"){
-                            currentPage = .grocery
-                            openPopUp = false
-                        }
-                    }
-                }
-                Button(action: {openPopUp.toggle()}) {
+                Button(action: {withAnimation {openSlide.toggle()}}) {
                     Rectangle()
                         .opacity(0)
                         .overlay{
-                            VStack(alignment:.center){
-                            Image(systemName: "plus.circle.fill").resizable().scaledToFit()
-                                .frame(width:80)
-                            Text("Add").font(.footnote)
+                            VStack(alignment:.center,spacing:6){
+                                Image(systemName: "plus.circle.fill").resizable().scaledToFit()
+                                    .frame(width:60,height:60)
+                                    .foregroundStyle(.customAccent)
+                                Text("Add").font(Font.custom("Poppins-Regular",size:12))
+                                    .foregroundColor(.black)
+                            }
                         }
-                    }
-                }
-                .frame(width:100,height:60)
-            }.foregroundColor(.black)
-        
+                }.frame(width:60,height:84)
+                    .padding(50)
+            }
+            if openSlide {
+                AddItemSlideView(currentPage:$currentPage, openSlide:$openSlide)
+                    .transition(.move(edge: .bottom))
+            }
+        }
     }
 }
 
+#Preview {
+    AddButtonContainerView(currentPage: .constant(.home)).environment(\.font, Font.custom("Poppins-Regular",size:14))
+}
 

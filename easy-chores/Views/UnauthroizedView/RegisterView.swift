@@ -21,16 +21,15 @@ struct RegisterView: View {
             CustomTextFieldView(input: $password, placeholder: "Password",secure: true)
             HStack{
                 Text("Already a member?").foregroundStyle(.gray)
-                Text("Log in").bold().foregroundStyle(.customPrimary).onTapGesture {
+                Text("Log in").foregroundStyle(.customPrimary).onTapGesture {
                     presentationMode.wrappedValue.dismiss()
                 }
-            }.font(.caption)
-                .padding(20)
+            }.padding(20)
             Spacer()
             CustomButtonView(width: 340, height: 48, text: "Sign Up"){
                 Task{await handleRegister()}
             }
-        }.padding()
+        }.padding(25)
         .navigationBarBackButtonHidden()
     }
     @MainActor

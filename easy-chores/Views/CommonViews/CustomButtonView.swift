@@ -6,6 +6,7 @@ struct CustomButtonView: View {
     var width : CGFloat
     var height: CGFloat
     var text : String
+    var fontSize : CGFloat = 16
     var onClick : ()->Void
     
     var body: some View {
@@ -14,7 +15,7 @@ struct CustomButtonView: View {
                 .fill(.customPrimary)
                 .frame(width:width,height:height)
         }.overlay{
-            Text(text).font(.system(size: 16)).foregroundColor(.white).bold()
+            Text(text).font(Font.custom("Poppins-Regular",size:fontSize)).foregroundColor(.white).bold()
         }
     }
 }

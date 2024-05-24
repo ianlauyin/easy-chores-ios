@@ -45,7 +45,7 @@
 		D28615132BF38F36009D8D24 /* GroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28615122BF38F36009D8D24 /* GroupItemView.swift */; };
 		D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */; };
 		D28F8D632BF65A1B00BCE419 /* CustomDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D622BF65A1B00BCE419 /* CustomDataError.swift */; };
-		D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */; };
+		D28F8D682BF6636700BCE419 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F8D672BF6636600BCE419 /* AddItemView.swift */; };
 		D2B5046E2BFBB5CC00C6949D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5046D2BFBB5CC00C6949D /* ProfileView.swift */; };
 		D2B504842BFCDBA900C6949D /* ErrorViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B504832BFCDBA900C6949D /* ErrorViewTest.swift */; };
 		D2B504862BFCDBD200C6949D /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = D2B504852BFCDBD200C6949D /* ViewInspector */; };
@@ -68,6 +68,7 @@
 		D2B504E12BFF1E6000C6949D /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B504CF2BFF1E5C00C6949D /* Poppins-ExtraBold.ttf */; };
 		D2B504E22BFF1E6000C6949D /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B504D02BFF1E5D00C6949D /* Poppins-MediumItalic.ttf */; };
 		D2B504E32BFF1E6000C6949D /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2B504D12BFF1E5F00C6949D /* Poppins-ExtraLightItalic.ttf */; };
+		D2EAC5142C006F9E00CC80DE /* AddItemSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EAC5132C006F9E00CC80DE /* AddItemSlideView.swift */; };
 		D2F7F6DC2BF5C19400DDA991 /* GroceryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */; };
 		D2F7F6DE2BF5C3D600DDA991 /* HomeGroceriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */; };
 		D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */; };
@@ -131,7 +132,7 @@
 		D28615122BF38F36009D8D24 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
 		D28F8D5E2BF5E81E00BCE419 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		D28F8D622BF65A1B00BCE419 /* CustomDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomDataError.swift; path = ../CustomDataError.swift; sourceTree = "<group>"; };
-		D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPopUpView.swift; sourceTree = "<group>"; };
+		D28F8D672BF6636600BCE419 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		D2B5046D2BFBB5CC00C6949D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D2B504822BFCDBA900C6949D /* easy-choresTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "easy-choresTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2B504832BFCDBA900C6949D /* ErrorViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewTest.swift; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 		D2B504CF2BFF1E5C00C6949D /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 		D2B504D02BFF1E5D00C6949D /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D2B504D12BFF1E5F00C6949D /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		D2EAC5132C006F9E00CC80DE /* AddItemSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemSlideView.swift; sourceTree = "<group>"; };
 		D2F7F6DB2BF5C19400DDA991 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = "<group>"; };
 		D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroceriesView.swift; sourceTree = "<group>"; };
 		D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemView.swift; sourceTree = "<group>"; };
@@ -359,11 +361,12 @@
 		D28F8D642BF6630200BCE419 /* AddItemViews */ = {
 			isa = PBXGroup;
 			children = (
-				D28F8D672BF6636600BCE419 /* AddItemPopUpView.swift */,
+				D28F8D672BF6636600BCE419 /* AddItemView.swift */,
 				D26ED50B2BF6898E00AA9FC9 /* AddButtonContainerView.swift */,
 				D26ED50D2BF6948D00AA9FC9 /* CreateChoreView.swift */,
 				D26ED5122BF7432600AA9FC9 /* CreateGroceryView.swift */,
 				D26ED5192BF750C600AA9FC9 /* CreateGroceryItemView.swift */,
+				D2EAC5132C006F9E00CC80DE /* AddItemSlideView.swift */,
 			);
 			path = AddItemViews;
 			sourceTree = "<group>";
@@ -570,7 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D25612702BFA417F00CF7186 /* MenuButton.swift in Sources */,
-				D28F8D682BF6636700BCE419 /* AddItemPopUpView.swift in Sources */,
+				D28F8D682BF6636700BCE419 /* AddItemView.swift in Sources */,
 				D28614F32BF35794009D8D24 /* APIManager.swift in Sources */,
 				D231EF6C2BF9222D002DE76A /* LogoutButtonView.swift in Sources */,
 				D2B504912BFF0A4D00C6949D /* CustomTextFieldView.swift in Sources */,
@@ -597,6 +600,7 @@
 				D25158EC2BEF70110085870B /* MainView.swift in Sources */,
 				D231EF692BF91A36002DE76A /* LoginUserViewModel.swift in Sources */,
 				D2B5046E2BFBB5CC00C6949D /* ProfileView.swift in Sources */,
+				D2EAC5142C006F9E00CC80DE /* AddItemSlideView.swift in Sources */,
 				D26ED51C2BF7697100AA9FC9 /* Extension.swift in Sources */,
 				D28F8D5F2BF5E81E00BCE419 /* CustomButtonView.swift in Sources */,
 				D227C6252BF5031400F81355 /* ChoreViewModel.swift in Sources */,

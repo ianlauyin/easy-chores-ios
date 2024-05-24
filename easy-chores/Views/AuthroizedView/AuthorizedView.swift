@@ -37,13 +37,7 @@ struct AuthorizedView: View {
             }
             AuthroizedTabView(currentPage:$currentPage)
         }.overlay{
-            VStack{
-                Spacer()
                 AddButtonContainerView(currentPage:$currentPage)
-                    .padding(.bottom,55)
-            }
-        }
-        .ignoresSafeArea(.all,edges: .bottom)
+        }.ignoresSafeArea(.all,edges:.bottom)
     }
 }
-

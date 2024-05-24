@@ -98,5 +98,5 @@ struct CreateGroceryView: View {
 }
 
 #Preview {
-    CreateGroceryView().environmentObject(previewLoginUserViewModel)
+    CreateGroceryView().environmentObject(LoginUserViewModel())
 }

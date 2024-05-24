@@ -26,4 +26,4 @@ class LoginUserViewModel : ObservableObject{
 }
 
 
-let previewLoginUserViewModel = LoginUserViewModel()
+

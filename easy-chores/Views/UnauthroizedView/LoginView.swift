@@ -20,10 +20,9 @@ struct LoginView: View {
                     Text("Don't have an account?")
                         .foregroundStyle(.gray)
                     NavigationLink(destination: RegisterView()){
-                        Text("Sign Up").bold()
+                        Text("Sign Up")
                     }.foregroundStyle(.customPrimary)
-                }.font(.caption)
-                    .padding(10)
+                }.padding(10)
                 Spacer()
                 CustomButtonView(width: 340,height:48, text: "Login"){
                     Task{await handleLogin()}

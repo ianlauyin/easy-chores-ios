@@ -112,5 +112,5 @@ struct CreateChoreView: View {
 }
 
 #Preview {
-    CreateChoreView().environmentObject(previewLoginUserViewModel)
+    CreateChoreView().environmentObject(LoginUserViewModel())
 }

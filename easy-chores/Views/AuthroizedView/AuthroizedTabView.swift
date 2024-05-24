@@ -8,56 +8,59 @@ struct AuthroizedTabView: View {
             HStack(alignment:.top, spacing:15){
                 Button(action:{
                     currentPage = .home}){
-                        VStack(spacing:2){
+                        VStack(spacing:6){
                             Image(systemName: "house.fill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width:30,height:30)
+                                .frame(width:40,height:40)
                             Text("Home")
-                                .font(.footnote)
                         }
                     }.padding(10)
+                    .foregroundStyle(currentPage == .home ? .customPrimary : .gray)
                 
                 Button(action:{
                     currentPage = .calendar}){
-                    VStack(spacing:2){
+                    VStack(spacing:6){
                         Image(systemName: "calendar")
                             .resizable()
                             .scaledToFit()
-                            .frame(width:30,height:30)
+                            .frame(width:40,height:40)
                         Text("Calendar")
-                            .font(.footnote)
                         }
                     }.padding(10)
+                    .foregroundStyle(currentPage == .calendar ? .customPrimary : .gray)
                 
                 Spacer().frame(width:30).padding(10)
                 
                 Button(action:{
                     currentPage = .notice}){
-                    VStack(spacing:2){
+                    VStack(spacing:6){
                         Image(systemName: "bell")
                             .resizable()
                             .scaledToFit()
-                            .frame(width:30,height:30)
+                            .frame(width:40,height:40)
                         Text("Notice")
-                            .font(.footnote)
+                            
                         }
                     }.padding(10)
+                    .foregroundStyle(currentPage == .notice ? .customPrimary : .gray)
                 
                 Button(action:{
                     currentPage = .profile}){
-                        VStack(spacing:2){
+                        VStack(spacing:6){
                             Image(systemName: "person.crop.circle")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width:30,height:30)
+                                .frame(width:40,height:40)
                             Text("Profile")
-                                .font(.footnote)
                         }
-                    }.padding(10)
-            }.foregroundStyle(.gray)
-                .padding(.bottom,50)
-        }.frame(height:100)
+                    }.padding(10).foregroundStyle(currentPage == .profile ? .customPrimary : .gray)
+            }.padding(.bottom,50)
+        }.frame(height:115)
+            .font(Font.custom("Poppins-Regular",size:12))
     }
 }
 
+#Preview{
+    AuthroizedTabView(currentPage: .constant(CurrentPage.home)).environment(\.font, Font.custom("Poppins-Regular",size:14))
+}
