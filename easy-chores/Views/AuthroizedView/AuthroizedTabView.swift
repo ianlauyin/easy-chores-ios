@@ -55,7 +55,7 @@ struct AuthroizedTabView: View {
                             }
                         }.frame(width:geometry.size.width/5)
                         .foregroundStyle(currentPage == .profile ? .customPrimary : .gray)
-                }.padding(.top,8)
+                }
             }.padding(.bottom,50)
         }.frame(height:115)
         .font(Font.custom("Poppins-Regular",size:12))

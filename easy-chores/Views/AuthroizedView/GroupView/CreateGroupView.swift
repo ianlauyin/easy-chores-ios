@@ -2,16 +2,31 @@
 import SwiftUI
 
 struct CreateGroupView: View {
-    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var user : LoginUserViewModel
     @EnvironmentObject var errorManager : ErrorManager
     @State var name :String = ""
     var handleBack : ()->Void
     var body: some View {
-        VStack{
-            TextField("Group name", text : $name).textFieldStyle(.roundedBorder)
+        VStack(spacing:24){
+            ZStack{
+                Text("Create new group")
+                    .font(Font.custom("Poppins-Regular",size:20))
+                    .bold()
+                    .foregroundStyle(.customAccent)
+                HStack{
+                    Button(action:handleBack){
+                        Image(systemName:"lessthan")
+                            .resizable()
+                            .frame(width:7,height:13)
+                            .padding(.leading,12)
+                            .foregroundStyle(.black)
+                    }
+                    Spacer()
+                }
+            }
+            CustomTextFieldView(input: $name, placeholder: "Group name")
             Spacer()
-            CustomButtonView(width: .infinity, height: 40, text: "Create Group"){
+            CustomButtonView(width: .infinity, height: 40, text: "Create Group",bold: true){
                 Task{await handleClick()}
             }
         }.padding()
@@ -32,4 +47,9 @@ struct CreateGroupView: View {
             errorManager.error = error
         }
     }
+}
+
+
+#Preview {
+    CreateGroupView(){}.environmentObject(LoginUserViewModel()).environmentObject(ErrorManager())
 }
