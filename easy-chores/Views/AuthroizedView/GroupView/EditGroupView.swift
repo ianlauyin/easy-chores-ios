@@ -2,7 +2,6 @@
 import SwiftUI
 
 struct EditGroupView: View {
-    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var user : LoginUserViewModel
     @EnvironmentObject var errorManager : ErrorManager
     @State var email :String = ""
@@ -11,11 +10,28 @@ struct EditGroupView: View {
     var handleBack : ()->Void
     
     var body: some View {
-        VStack{
+        VStack(alignment:.leading, spacing:18){
+            ZStack{
+                Text("Edit group")
+                    .font(Font.custom("Poppins-Regular",size:20))
+                    .bold()
+                    .foregroundStyle(.customAccent)
+                HStack{
+                    Button(action:handleBack){
+                        Image(systemName:"lessthan")
+                            .resizable()
+                            .frame(width:7,height:13)
+                            .padding(.leading,12)
+                            .foregroundStyle(.black)
+                    }
+                    Spacer()
+                }
+            }
+            Text("")
             GroupListView(currentGroup: currentGroup)
             if currentGroup.id != nil{
                 TextField("Add user by email", text : $email).textFieldStyle(.roundedBorder)
-                CustomButtonView(width: .infinity, height: 40, text: "Add"){
+                CustomButtonView(width: 339, height: 40, text: "Add"){
                     Task{await handleAdd()}
                 }
             }
@@ -29,7 +45,6 @@ struct EditGroupView: View {
             }
             Spacer()
         }.padding()
-            .navigationBarTitle("Create New Group")
         .task(id:currentGroup.id){
             if currentGroup.id != nil{
                 await updateUserList()
@@ -67,14 +82,13 @@ struct EditGroupView: View {
     func handleDelete(removeUserEmail:String?)async{
         do{
             if let groupId = currentGroup.id,
-            let removeUserEmail = removeUserEmail{
+               let removeUserEmail = removeUserEmail{
                 _ = try await APIManager.request.delete(url: "/groups/\(groupId)/users/\(removeUserEmail)")
                 await updateUserList()
-            }
-            if removeUserEmail == KeychainManager.keychain.userEmail{
-                handleBack()
-            }
-            else{
+                if removeUserEmail == KeychainManager.keychain.userEmail{
+                    handleBack()
+                }
+            }else{
                 throw CustomDataError.invalidGroupId
             }
         }catch{

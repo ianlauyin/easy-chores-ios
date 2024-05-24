@@ -18,7 +18,7 @@ struct AddButtonContainerView: View {
                                     .foregroundColor(.black)
                             }
                 }.frame(width:60,height:84)
-                    .padding(50)
+                .padding(50)
         }
     }
 }

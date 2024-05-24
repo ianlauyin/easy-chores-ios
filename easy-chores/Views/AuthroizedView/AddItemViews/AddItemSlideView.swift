@@ -10,7 +10,7 @@ struct AddItemSlideView: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(.white)
                 .background(.black.opacity(0.5))
-                .frame(width:.infinity,height:200)
+                .frame(height:200)
                 .overlay{
                     VStack(spacing:12){
                         HStack(spacing:24){
@@ -29,7 +29,6 @@ struct AddItemSlideView: View {
                         Spacer()
                     }.padding(24)
                 }
-        }.frame(width:.infinity)
-            .ignoresSafeArea(.all)
+        }.ignoresSafeArea(.all)
     }
 }

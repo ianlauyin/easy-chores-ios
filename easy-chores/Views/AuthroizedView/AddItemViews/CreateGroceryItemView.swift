@@ -11,7 +11,7 @@ struct CreateGroceryItemView: View {
         RoundedRectangle(cornerRadius: 10)
             .fill(.white)
             .stroke(.gray)
-            .frame(height:80)
+            .frame(height:46)
             .overlay{
                 HStack{
                     TextField("Grocery name",text:$grocery.name)
@@ -26,6 +26,7 @@ struct CreateGroceryItemView: View {
                     }.padding()
                         .foregroundStyle(.red)
                         .frame(width:50,height:50)
+                        .ignoresSafeArea([])
                 }.onChange(of: quantity){
                     handleQuantityChange()
                 }

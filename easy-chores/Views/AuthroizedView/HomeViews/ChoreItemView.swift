@@ -17,7 +17,7 @@ struct ChoreItemView: View {
                         .bold()
                     VStack(alignment:.leading, spacing:2){
                         Text("Assigned to: \(chore.assignedUsers.joined(separator: ", "))")
-                        Text("Created on: \(chore.createdAt ?? "")")
+                        Text("Date: \(chore.createdAt ?? "")")
                             
                     }.font(Font.custom("Poppins-Regular",size:10))
                     CustomButtonView(width:120, height: 27,text:"Done",fontSize: 10)

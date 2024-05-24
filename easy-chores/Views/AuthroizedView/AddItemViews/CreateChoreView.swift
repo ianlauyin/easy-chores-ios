@@ -6,7 +6,6 @@ struct CreateChoreView: View {
     @EnvironmentObject var user : LoginUserViewModel
     @EnvironmentObject private var errorManager : ErrorManager
     @State private var title = ""
-    @State private var detail = ""
     @StateObject var currentGroup = GroupViewModel()
     @State var users : [UserViewModel] = []
     @State var selectedUserId : Int? = nil
@@ -14,30 +13,38 @@ struct CreateChoreView: View {
     
     
     var body: some View {
-        VStack(spacing:15){
-            HStack {
-                Spacer()
+        VStack(spacing:16){
+            ZStack{
                 Text("Add Chore")
-                    .font(.title)
-                Spacer()
-                Spacer()
-                    .frame(width:20)
+                    .font(Font.custom("Poppins-Regular",size:20))
+                    .bold()
+                    .foregroundStyle(.customAccent)
+                HStack{
+                    Button(action:handleBack){
+                        Image(systemName:"lessthan")
+                            .resizable()
+                            .frame(width:7,height:13)
+                            .padding(.leading,12)
+                            .foregroundStyle(.black)
+                    }
+                    Spacer()
+                }
             }
-            TextField("What chores need to be done?",text:$title)
-                .textFieldStyle(.roundedBorder)
+            CustomTextFieldView(input: $title, placeholder: "What chores need to be done?")
             GroupListView(currentGroup: currentGroup)
             if !users.isEmpty {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.white)
-                    .stroke(Color.gray, lineWidth: 1)
-                    .frame(width:.infinity,height:40)
+                    .stroke(selectedUserId == nil ? Color.gray : Color.customPrimary, lineWidth: 1)
+                    .frame(width: 339 , height:49)
                     .overlay{
                         HStack{
                             Text("Assign this chore to...")
                                 .padding()
+                                .foregroundStyle(selectedUserId == nil ? .gray : .black)
                             Spacer()
                             Picker("", selection: $selectedUserId){
-                                Text("Select a user")
+                                Text("")
                                     .tag(nil as Int?)
                                 ForEach(users , id: \.id) { user in
                                     Text(user.username ?? "Unknown user").tag(user.id)
@@ -47,13 +54,8 @@ struct CreateChoreView: View {
                         }
                     }
             }
-            VStack(alignment: .leading){
-                Text("Detail:")
-                TextEditor(text:$detail)
-                    .border(.gray)
-                }
             Spacer()
-            CustomButtonView(width: .infinity, height: 40, text: "Add"){
+            CustomButtonView(width:339, height: 40, text: "Add",bold:true){
                 Task{
                     await createChore()
                 }
@@ -86,8 +88,7 @@ struct CreateChoreView: View {
             if let groupId = currentGroup.id{
                 let choreData : [String:Any] = [
                     "group_id":groupId,
-                    "title":title,
-                    "detail":detail]
+                    "title":title]
                 let jsonChoreData = try await APIManager.request.post(url: "/chores", data: choreData)
                 let jsonChoreObject = try JSONSerialization.jsonObject(with: jsonChoreData, options: [])
                 guard let chore = jsonChoreObject as? [String: Any] else {

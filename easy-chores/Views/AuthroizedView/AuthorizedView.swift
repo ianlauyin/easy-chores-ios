@@ -23,7 +23,7 @@ struct AuthorizedView: View {
     @EnvironmentObject var user : LoginUserViewModel
     @State private var currentPage: CurrentPage = .home
     @State private var currentSlide :CurrentSlide = .none
-    
+    let noTabView : [CurrentPage] = [.createGroup,.editGroup,.chore,.grocery]
 
     
     var body: some View {
@@ -46,10 +46,14 @@ struct AuthorizedView: View {
             case .createGroup : CreateGroupView{currentPage = .home}
             case .editGroup: EditGroupView{currentPage = .home}
             }
-            AuthroizedTabView(currentPage:$currentPage)
+            if !noTabView.contains(currentPage){
+                AuthroizedTabView(currentPage:$currentPage)
+            }
         }.overlay{
             ZStack{
-                AddButtonContainerView(currentSlide: $currentSlide,currentPage:$currentPage)
+                if !noTabView.contains(currentPage){
+                    AddButtonContainerView(currentSlide: $currentSlide,currentPage:$currentPage)
+                }
                 if currentSlide == .addItem{
                     AddItemSlideView(currentPage: $currentPage, currentSlide: $currentSlide )
                         .transition(.move(edge: .bottom))
@@ -59,7 +63,7 @@ struct AuthorizedView: View {
                         .transition(.move(edge: .bottom))
                 }
             }
-        }.ignoresSafeArea(.all,edges:.bottom)
+        }.ignoresSafeArea(.all,edges: noTabView.contains(currentPage) ? [] : .bottom)
     }
 }
 

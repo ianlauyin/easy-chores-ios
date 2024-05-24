@@ -26,7 +26,7 @@ struct CreateGroupView: View {
             }
             CustomTextFieldView(input: $name, placeholder: "Group name")
             Spacer()
-            CustomButtonView(width: .infinity, height: 40, text: "Create Group",bold: true){
+            CustomButtonView(width: 339, height: 40, text: "Create Group",bold: true){
                 Task{await handleClick()}
             }
         }.padding()

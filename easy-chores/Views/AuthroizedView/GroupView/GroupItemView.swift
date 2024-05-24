@@ -14,6 +14,7 @@ struct GroupItemView: View {
                 .frame(width:77,height:29)
         }.overlay{
             Text(group.name ?? "Group")
+            Text(group.name ?? "Group")
                 .foregroundColor(isSelected ? .white : .customAccent)
         }
     }

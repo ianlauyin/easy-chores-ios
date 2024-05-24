@@ -21,13 +21,21 @@ struct CreateGroceryView: View {
     
     var body: some View {
         VStack(spacing:15){
-            HStack {
-                Spacer()
-                Text("Add Grocery")
-                    .font(.title)
-                Spacer()
-                Spacer()
-                    .frame(width:20)
+            ZStack{
+                Text("Add Groceries")
+                    .font(Font.custom("Poppins-Regular",size:20))
+                    .bold()
+                    .foregroundStyle(.customAccent)
+                HStack{
+                    Button(action:handleBack){
+                        Image(systemName:"lessthan")
+                            .resizable()
+                            .frame(width:7,height:13)
+                            .padding(.leading,12)
+                            .foregroundStyle(.black)
+                    }
+                    Spacer()
+                }
             }
             GroupListView(currentGroup: currentGroup)
             ScrollView(.vertical){
@@ -37,25 +45,23 @@ struct CreateGroceryView: View {
                                 removeNewGrocery(grocery.id)
                             }
                         }
-                    
                     Button(action: addItem){
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.white)
                             .stroke(.gray,style: StrokeStyle(lineWidth: 1, dash: [5]))
-                            .frame(height:60)
+                            .frame(height:46)
                             .overlay{
-                                Text("Add More +")
+                                Text("Add more +")
                                     .foregroundStyle(.black)
                             }
                     }
-                }.padding()
+                }.padding(5)
             }
-            CustomButtonView(width: .infinity, height: 40, text: "Add"){
-                hideKeyboard()
+            CustomButtonView(width: 339, height: 40, text: "Add",bold:true){
                 Task{
                     await createGroceries()
                     }
-            }
+            }.ignoresSafeArea(edges:[])
         }.padding()
             .onTapGesture {
             hideKeyboard()
