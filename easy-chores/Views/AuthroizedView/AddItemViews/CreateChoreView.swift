@@ -68,9 +68,7 @@ struct CreateChoreView: View {
         }.padding()
         .onTapGesture { focusedField = nil}
         .task(id:currentGroup.id){
-            if currentGroup.id != nil{
-                await updateGroupUser()
-            }
+            await updateGroupUser()
         }
     }
     

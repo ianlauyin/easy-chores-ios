@@ -30,7 +30,7 @@
 		D25159052BEF701F0085870B /* easy_choresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25159042BEF701F0085870B /* easy_choresUITests.swift */; };
 		D252F6142BF8446F004272AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252F6132BF8446F004272AA /* LoginView.swift */; };
 		D25612702BFA417F00CF7186 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256126F2BFA417F00CF7186 /* MenuButton.swift */; };
-		D25612722BFA444F00CF7186 /* GroupMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612712BFA444F00CF7186 /* GroupMenuView.swift */; };
+		D25612722BFA444F00CF7186 /* GroupSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612712BFA444F00CF7186 /* GroupSlideView.swift */; };
 		D25612742BFA467300CF7186 /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612732BFA467300CF7186 /* CreateGroupView.swift */; };
 		D25612762BFA468700CF7186 /* EditGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612752BFA468700CF7186 /* EditGroupView.swift */; };
 		D25612782BFA717D00CF7186 /* GroupUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25612772BFA717D00CF7186 /* GroupUserView.swift */; };
@@ -117,7 +117,7 @@
 		D25159042BEF701F0085870B /* easy_choresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = easy_choresUITests.swift; sourceTree = "<group>"; };
 		D252F6132BF8446F004272AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D256126F2BFA417F00CF7186 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
-		D25612712BFA444F00CF7186 /* GroupMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMenuView.swift; sourceTree = "<group>"; };
+		D25612712BFA444F00CF7186 /* GroupSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSlideView.swift; sourceTree = "<group>"; };
 		D25612732BFA467300CF7186 /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
 		D25612752BFA468700CF7186 /* EditGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupView.swift; sourceTree = "<group>"; };
 		D25612772BFA717D00CF7186 /* GroupUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUserView.swift; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 				D227C6222BF500FE00F81355 /* ChoreItemView.swift */,
 				D2F7F6DD2BF5C3D600DDA991 /* HomeGroceriesView.swift */,
 				D2F7F6DF2BF5C4AA00DDA991 /* GroceryItemView.swift */,
-				D25612712BFA444F00CF7186 /* GroupMenuView.swift */,
+				D25612712BFA444F00CF7186 /* GroupSlideView.swift */,
 			);
 			path = HomeViews;
 			sourceTree = "<group>";
@@ -587,7 +587,7 @@
 				D28F8D632BF65A1B00BCE419 /* CustomDataError.swift in Sources */,
 				D26ED51A2BF750C600AA9FC9 /* CreateGroceryItemView.swift in Sources */,
 				D2F7F6E02BF5C4AA00DDA991 /* GroceryItemView.swift in Sources */,
-				D25612722BFA444F00CF7186 /* GroupMenuView.swift in Sources */,
+				D25612722BFA444F00CF7186 /* GroupSlideView.swift in Sources */,
 				D231EF6F2BF9D005002DE76A /* AuthroizedTabView.swift in Sources */,
 				D227C6212BF4E5C800F81355 /* HomeChoresView.swift in Sources */,
 				D227C6132BF3CAF700F81355 /* LoadingView.swift in Sources */,

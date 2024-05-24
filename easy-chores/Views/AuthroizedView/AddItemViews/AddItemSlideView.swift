@@ -3,7 +3,7 @@ import SwiftUI
 
 struct AddItemSlideView: View {
     @Binding var currentPage : CurrentPage
-    @Binding var openSlide : Bool
+    @Binding var currentSlide : CurrentSlide
     var body: some View {
         VStack(spacing:0){
             Color.black.opacity(0.5)
@@ -16,14 +16,14 @@ struct AddItemSlideView: View {
                         HStack(spacing:24){
                             AddItemView(text: "Add Chores",image:"washer"){
                                 currentPage = .chore
-                                openSlide = false
+                                currentSlide = .none
                             }
                             AddItemView(text: "Add Groceries",image:"cart"){
                                 currentPage = .grocery
-                                openSlide = false
+                                currentSlide = .none
                             }
                         }
-                        Button(action:{withAnimation{openSlide = false}}){
+                        Button(action:{withAnimation{currentSlide = .none}}){
                             Text("Cancel").foregroundStyle(.customPrimary).underline()
                         }
                         Spacer()
@@ -32,8 +32,4 @@ struct AddItemSlideView: View {
         }.frame(width:.infinity)
             .ignoresSafeArea(.all)
     }
-}
-
-#Preview {
-    AddItemSlideView(currentPage: .constant(.home), openSlide: .constant(true)).environment(\.font, Font.custom("Poppins-Regular",size:14))
 }

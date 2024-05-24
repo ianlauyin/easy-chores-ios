@@ -4,7 +4,7 @@ struct MenuButton: View {
     var onClick : ()->Void
     
     var body: some View {
-        Button(action: onClick){
+        Button(action: {withAnimation{onClick()}}){
                 Image(systemName:"ellipsis")
         }.foregroundStyle(.black)
     }

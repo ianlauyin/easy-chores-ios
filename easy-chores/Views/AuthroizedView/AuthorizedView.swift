@@ -8,19 +8,28 @@ enum CurrentPage{
     case calendar
     case notice
     case profile
+    case createGroup
+    case editGroup
+}
+
+enum CurrentSlide{
+    case none
+    case addItem
+    case group
 }
 
 struct AuthorizedView: View {
 
     @EnvironmentObject var user : LoginUserViewModel
     @State private var currentPage: CurrentPage = .home
+    @State private var currentSlide :CurrentSlide = .none
     
 
     
     var body: some View {
         VStack(alignment: .center){
             switch currentPage{
-            case .home: HomeView()
+            case .home: HomeView(currentSlide:$currentSlide)
             case .calendar: VStack{
                 Spacer()
                 Text("Calendar")
@@ -34,10 +43,26 @@ struct AuthorizedView: View {
             case .profile: ProfileView()
             case .chore: CreateChoreView()
             case .grocery: CreateGroceryView()
+            case .createGroup : CreateGroupView()
+            case .editGroup: EditGroupView()
             }
             AuthroizedTabView(currentPage:$currentPage)
         }.overlay{
-                AddButtonContainerView(currentPage:$currentPage)
+            ZStack{
+                AddButtonContainerView(currentSlide: $currentSlide,currentPage:$currentPage)
+                if currentSlide == .addItem{
+                    AddItemSlideView(currentPage: $currentPage, currentSlide: $currentSlide )
+                        .transition(.move(edge: .bottom))
+                }
+                if currentSlide == .group{
+                    GroupSlideView(currentPage:$currentPage,currentSlide:$currentSlide)
+                        .transition(.move(edge: .bottom))
+                }
+            }
         }.ignoresSafeArea(.all,edges:.bottom)
     }
+}
+
+#Preview {
+    AuthorizedView().environmentObject(LoginUserViewModel()).environmentObject(ErrorManager())
 }

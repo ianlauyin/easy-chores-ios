@@ -4,7 +4,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var user : LoginUserViewModel
     @StateObject private var currentGroup = GroupViewModel()
-    @State private var isGroupMenuOpen = false
+    @Binding var currentSlide :CurrentSlide
         
     var body: some View {
         NavigationStack{
@@ -16,11 +16,11 @@ struct HomeView: View {
                             GroupListView(currentGroup:currentGroup)
                             if currentGroup.id != nil {
                                 MenuButton{
-                                    isGroupMenuOpen = true
+                                    currentSlide = .group
                                 }
                             }else{
                                 NavigationLink(destination: CreateGroupView()){
-                                    Text("Create")
+                                    Text("Create Group")
                                 }
                             }
                         }
@@ -34,17 +34,10 @@ struct HomeView: View {
                         LoadingView()
                     }
                 }.padding(.horizontal,20)
-            }.overlay{
-                if isGroupMenuOpen{
-                    VStack{
-                        Color.black.opacity(0.2).ignoresSafeArea(.all)
-                        GroupMenuView(){
-                            isGroupMenuOpen = false
-                        }
-                    }
-                }
             }
         }
     }
 }
+
+
 
