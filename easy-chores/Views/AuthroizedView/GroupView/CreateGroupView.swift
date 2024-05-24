@@ -6,6 +6,7 @@ struct CreateGroupView: View {
     @EnvironmentObject var user : LoginUserViewModel
     @EnvironmentObject var errorManager : ErrorManager
     @State var name :String = ""
+    var handleBack : ()->Void
     var body: some View {
         VStack{
             TextField("Group name", text : $name).textFieldStyle(.roundedBorder)
@@ -14,7 +15,6 @@ struct CreateGroupView: View {
                 Task{await handleClick()}
             }
         }.padding()
-        .navigationBarTitle("Create New Group")
     }
     
     @MainActor
@@ -27,7 +27,7 @@ struct CreateGroupView: View {
                 throw CustomDataError.invalidUserId
             }
             _ = try await APIManager.request.post(url: "/groups", data: requestData)
-            presentationMode.wrappedValue.dismiss()
+            handleBack()
         }catch{
             errorManager.error = error
         }

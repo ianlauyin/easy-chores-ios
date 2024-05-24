@@ -27,9 +27,9 @@ struct AuthorizedView: View {
 
     
     var body: some View {
-        VStack(alignment: .center){
+        VStack(alignment: .center,spacing:0){
             switch currentPage{
-            case .home: HomeView(currentSlide:$currentSlide)
+            case .home: HomeView(currentSlide:$currentSlide,currentPage:$currentPage)
             case .calendar: VStack{
                 Spacer()
                 Text("Calendar")
@@ -41,9 +41,9 @@ struct AuthorizedView: View {
                 Spacer()
             }
             case .profile: ProfileView()
-            case .grocery: CreateGroceryView()
-            case .chore: CreateChoreView()
-            case .createGroup : CreateGroupView()
+            case .grocery: CreateGroceryView{currentPage = .home}
+            case .chore: CreateChoreView{currentPage = .home}
+            case .createGroup : CreateGroupView{currentPage = .home}
             case .editGroup: EditGroupView()
             }
             AuthroizedTabView(currentPage:$currentPage)

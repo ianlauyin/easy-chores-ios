@@ -24,7 +24,7 @@ struct LoginView: View {
                     }.foregroundStyle(.customPrimary)
                 }.padding(10)
                 Spacer()
-                CustomButtonView(width: 340,height:48, text: "Login"){
+                CustomButtonView(width: 340,height:48, text: "Login",bold: true){
                     Task{await handleLogin()}
                 }.padding(.vertical,20)
             }.padding(25)

@@ -8,7 +8,7 @@ struct GroupListView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack{
+            HStack(spacing:8){
                 if groups.isEmpty{
                     Text("You don't have any group yet")
                 }else{
@@ -16,7 +16,7 @@ struct GroupListView: View {
                         GroupItemView(isSelected: currentGroup.id == group.id, group: group){currentGroup.id = group.id}
                     }
                 }
-            }.padding(5)
+            }.padding(2)
         }.onAppear{Task{await fetchGroups()}}
     }
     

@@ -10,6 +10,7 @@ struct CreateChoreView: View {
     @StateObject var currentGroup = GroupViewModel()
     @State var users : [UserViewModel] = []
     @State var selectedUserId : Int? = nil
+    var handleBack : ()->Void
     
     
     var body: some View {
@@ -84,9 +85,9 @@ struct CreateChoreView: View {
         do{
             if let groupId = currentGroup.id{
                 let choreData : [String:Any] = [
-                        "group_id":groupId,
-                        "title":title,
-                        "detail":detail]
+                    "group_id":groupId,
+                    "title":title,
+                    "detail":detail]
                 let jsonChoreData = try await APIManager.request.post(url: "/chores", data: choreData)
                 let jsonChoreObject = try JSONSerialization.jsonObject(with: jsonChoreData, options: [])
                 guard let chore = jsonChoreObject as? [String: Any] else {
@@ -97,6 +98,7 @@ struct CreateChoreView: View {
                 }
                 let assignedUserIdData = ["user_ids":[selectedUserId]]
                 _ = try await APIManager.request.put(url: "/chores/\(choreId)/users", data: assignedUserIdData)
+                handleBack()
             }else{
                 throw CustomDataError.invalidGroupId
             }

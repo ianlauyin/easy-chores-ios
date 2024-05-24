@@ -5,7 +5,12 @@ struct MenuButton: View {
     
     var body: some View {
         Button(action: {withAnimation{onClick()}}){
-                Image(systemName:"ellipsis")
+            Image(systemName:"ellipsis")
+                .rotationEffect(.degrees(90))
         }.foregroundStyle(.black)
     }
+}
+
+#Preview {
+    MenuButton{}
 }

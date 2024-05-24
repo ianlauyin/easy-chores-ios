@@ -12,19 +12,17 @@ struct HomeGroceriesView: View {
         VStack{
             HStack(alignment: .bottom){
                 Text("Groceries")
-                    .font(.title)
+                    .font(Font.custom("Poppins-Regular",size:24))
                     .bold()
                 Spacer()
-                
             }
             ScrollView(.vertical, showsIndicators: true){
                 if groceries.isEmpty {
                    Text("This Group have no grocery yet.")
                 }else{
-                    VStack{
+                    VStack(alignment:.leading,spacing:12){
                         ForEach(groceries){ grocery in
                             GroceryItemView(grocery:grocery,handleRemove:removeGrocery)
-                            Divider()
                         }
                     }
                 }

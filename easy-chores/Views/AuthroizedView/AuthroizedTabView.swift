@@ -3,9 +3,9 @@ import SwiftUI
 struct AuthroizedTabView: View {
     @Binding var currentPage : CurrentPage
     var body: some View {
-        ZStack {
-            Color.gray.opacity(0.2)
-            GeometryReader { geometry in
+        GeometryReader { geometry in
+            VStack{
+                Divider()
                 HStack(alignment:.top, spacing: 0){
                     Button(action:{
                         currentPage = .home}){

@@ -6,21 +6,24 @@ struct ChoreItemView: View {
     let handleRemove : (Int)->Void
     
     var body: some View {
-        ZStack{
-            VStack(alignment:.leading,spacing:5){
-                Text(chore.title ?? "Title").font(.title3).bold()
-                Text("Assigned to: \(chore.assignedUsers.joined(separator: ", "))").font(.caption)
-                Text("Date: \(chore.createdAt ?? "")").font(.caption2).foregroundStyle(.gray)
-                CustomButtonView(width:180, height: 40,text:"Done")
-                {Task{ await removeChore() }}
+        RoundedRectangle(cornerRadius: 10)
+            .fill(.white)
+            .shadow(radius: 2, x:2, y:2)
+            .frame(width:144 ,height:115)
+            .overlay{
+                VStack(alignment:.leading,spacing:6){
+                    Text(chore.title ?? "Title")
+                        .font(Font.custom("Poppins-Regular",size:12))
+                        .bold()
+                    VStack(alignment:.leading, spacing:2){
+                        Text("Assigned to: \(chore.assignedUsers.joined(separator: ", "))")
+                        Text("Created on: \(chore.createdAt ?? "")")
+                            
+                    }.font(Font.custom("Poppins-Regular",size:10))
+                    CustomButtonView(width:120, height: 27,text:"Done",fontSize: 10)
+                    {Task{ await removeChore() }}
+                }.padding(12)
             }
-        }
-        .padding(10)
-        .frame(width:200,height:120)
-            .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(.gray, lineWidth: 1)
-        )
     }
     
     @MainActor
@@ -35,4 +38,8 @@ struct ChoreItemView: View {
             errorManager.error = error
         }
     }
+}
+
+#Preview {
+    ChoreItemView(chore: previewUnfinshedChoreViewModel){_ in }.environmentObject(ErrorManager())
 }

@@ -16,6 +16,7 @@ struct CreateGroceryView: View {
     @StateObject var currentGroup = GroupViewModel()
     @State var IdCount = 2
     @State var groceries : [newGrocery] = [newGrocery(id: 1, name: "", quantity: 1)]
+    var handleBack : ()->Void
     
     
     var body: some View {
@@ -79,6 +80,7 @@ struct CreateGroceryView: View {
                         groceryData["name"]=grocery.name
                         groceryData["quantity"]=grocery.quantity
                         _ = try await APIManager.request.post(url: "/groceries", data: groceryData)
+                        handleBack()
                     }
                 }else{
                     throw CustomDataError.invalidUserId

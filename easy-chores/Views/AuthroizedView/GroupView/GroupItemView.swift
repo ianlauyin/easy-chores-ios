@@ -8,12 +8,13 @@ struct GroupItemView: View {
     
     var body: some View {
         Button(action: onClick){
-            RoundedRectangle(cornerRadius: 40)
-                .fill(isSelected ? Color.black : Color.white)
-                .stroke(Color.black, lineWidth: 1)
-                .frame(width:100,height:40)
+            RoundedRectangle(cornerRadius: 20)
+                .fill(isSelected ? Color.customAccent : Color.white)
+                .stroke(Color.customAccent, lineWidth: 1)
+                .frame(width:77,height:29)
         }.overlay{
-            Text(group.name ?? "Group").font(.headline).foregroundColor(isSelected ? .white : .black)
+            Text(group.name ?? "Group")
+                .foregroundColor(isSelected ? .white : .customAccent)
         }
     }
 }

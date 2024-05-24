@@ -4,40 +4,36 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var user : LoginUserViewModel
     @StateObject private var currentGroup = GroupViewModel()
-    @Binding var currentSlide :CurrentSlide
-        
+    @Binding var currentSlide : CurrentSlide
+    @Binding var currentPage : CurrentPage
+    
     var body: some View {
-        NavigationStack{
-            GeometryReader{_ in
-                VStack(alignment: .leading){
-                    Text("Welcome! \(user.username ?? "user")").font(.title2)
-                    if user.id != nil{
-                        HStack{
-                            GroupListView(currentGroup:currentGroup)
-                            if currentGroup.id != nil {
-                                MenuButton{
-                                    currentSlide = .group
-                                }
-                            }else{
-                                NavigationLink(destination: CreateGroupView()){
-                                    Text("Create Group")
-                                }
-                            }
-                        }
-                        if currentGroup.id != nil {
-                            VStack(spacing:20){
-                                HomeChoresView(currentGroup: currentGroup)
-                                HomeGroceriesView(currentGroup:currentGroup)
-                            }
+        VStack(alignment: .leading,spacing: 12){
+            Text("Welcome! \(user.username ?? "user")").font(Font.custom("Poppins-Regular",size:16))
+                .bold()
+                .foregroundStyle(.customAccent)
+            if user.id != nil{
+                HStack{
+                    GroupListView(currentGroup:currentGroup)
+                    if currentGroup.id != nil {
+                        MenuButton{
+                            currentSlide = .group
                         }
                     }else{
-                        LoadingView()
+                        Button("Create"){
+                            currentPage = .createGroup
+                        }
                     }
-                }.padding(.horizontal,20)
+                }
+                if currentGroup.id != nil {
+                    VStack(spacing:20){
+                        HomeChoresView(currentGroup: currentGroup)
+                        HomeGroceriesView(currentGroup:currentGroup)
+                    }
+                }
+            }else{
+                LoadingView()
             }
-        }
+        }.padding(25)
     }
 }
-
-
-

@@ -26,7 +26,7 @@ struct RegisterView: View {
                 }
             }.padding(20)
             Spacer()
-            CustomButtonView(width: 340, height: 48, text: "Sign Up"){
+            CustomButtonView(width: 340, height: 48, text: "Sign Up",bold:true){
                 Task{await handleRegister()}
             }
         }.padding(25)

@@ -13,7 +13,7 @@ struct HomeChoresView: View {
         VStack{
             HStack{
                 Text("Chores")
-                    .font(.title)
+                    .font(Font.custom("Poppins-Regular",size:24))
                     .bold()
                 Spacer()
             }
@@ -21,12 +21,12 @@ struct HomeChoresView: View {
                 if chores.isEmpty{
                    Text("This Group have no chore yet.")
                 }else{
-                    HStack(alignment: .top,spacing: 16){
+                    HStack(alignment: .top,spacing: 8){
                         ForEach(chores){ chore in
                             ChoreItemView(chore: chore, handleRemove:removeChore)}
-                    }.padding(10)
+                    }.padding(.bottom,15)
                 }
-            }.frame(height: 120)
+            }.frame(height:130)
         }.task(id:currentGroup.id){
             await updateChores()}
     }
