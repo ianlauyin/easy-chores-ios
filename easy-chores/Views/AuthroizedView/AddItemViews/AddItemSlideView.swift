@@ -15,12 +15,12 @@ struct AddItemSlideView: View {
                     VStack(spacing:12){
                         HStack(spacing:24){
                             AddItemView(text: "Add Chores",image:"washer"){
-                                currentPage = .chore
                                 currentSlide = .none
+                                currentPage = .chore
                             }
                             AddItemView(text: "Add Groceries",image:"cart"){
-                                currentPage = .grocery
                                 currentSlide = .none
+                                currentPage = .grocery
                             }
                         }
                         Button(action:{withAnimation{currentSlide = .none}}){

@@ -3,11 +3,6 @@ import SwiftUI
 
 
 struct CreateChoreView: View {
-    private enum Field: Int, CaseIterable {
-            case title, detail
-        }
-    @FocusState private var focusedField: Field? 
-    
     @EnvironmentObject var user : LoginUserViewModel
     @EnvironmentObject private var errorManager : ErrorManager
     @State private var title = ""
@@ -29,7 +24,6 @@ struct CreateChoreView: View {
             }
             TextField("What chores need to be done?",text:$title)
                 .textFieldStyle(.roundedBorder)
-                .focused($focusedField, equals: .title)
             GroupListView(currentGroup: currentGroup)
             if !users.isEmpty {
                 RoundedRectangle(cornerRadius: 10)
@@ -56,24 +50,27 @@ struct CreateChoreView: View {
                 Text("Detail:")
                 TextEditor(text:$detail)
                     .border(.gray)
-                    .focused($focusedField, equals: .detail)
                 }
             Spacer()
             CustomButtonView(width: .infinity, height: 40, text: "Add"){
                 Task{
-                    focusedField = nil
                     await createChore()
                 }
             }
         }.padding()
-        .onTapGesture { focusedField = nil}
+        .onTapGesture { hideKeyboard()}
         .task(id:currentGroup.id){
-            await updateGroupUser()
+            if currentGroup.id != nil {
+                    await updateGroupUser()
+                }
         }
     }
     
     @MainActor
     func updateGroupUser() async{
+        if currentGroup.id == nil{
+            return
+        }
         do{
             let users = try await currentGroup.getGroupUsers()
             self.users = users
@@ -109,6 +106,3 @@ struct CreateChoreView: View {
     }
 }
 
-#Preview {
-    CreateChoreView().environmentObject(LoginUserViewModel())
-}

@@ -22,7 +22,3 @@ struct AddItemView: View {
         }.foregroundStyle(.black)
     }
 }
-
-#Preview {
-    AddItemView(text: "Add Chores", image:"plus"){()}.environment(\.font, Font.custom("Poppins-Regular",size:14))
-}

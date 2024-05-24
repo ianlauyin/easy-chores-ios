@@ -12,7 +12,7 @@ struct AddButtonContainerView: View {
                     VStack(alignment:.center,spacing:6){
                         Image(systemName:
                                 "plus.circle.fill").resizable().scaledToFit()
-                                    .frame(width:60,height:60)
+                                    .frame(width:50,height:50)
                                     .foregroundStyle(.customAccent)
                                 Text("Add").font(Font.custom("Poppins-Regular",size:12))
                                     .foregroundColor(.black)

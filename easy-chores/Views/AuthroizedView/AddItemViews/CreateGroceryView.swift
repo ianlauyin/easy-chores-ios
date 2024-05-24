@@ -7,9 +7,6 @@ struct newGrocery:Identifiable{
     var quantity:Int
 }
 
-enum Field{
-    case name
-}
 
 struct CreateGroceryView: View {
     @EnvironmentObject var user : LoginUserViewModel
@@ -18,7 +15,7 @@ struct CreateGroceryView: View {
     @State private var detail = ""
     @StateObject var currentGroup = GroupViewModel()
     @State var IdCount = 2
-    @State private var groceries : [newGrocery] = [newGrocery(id: 1, name: "", quantity: 1)]
+    @State var groceries : [newGrocery] = [newGrocery(id: 1, name: "", quantity: 1)]
     
     
     var body: some View {
@@ -34,11 +31,12 @@ struct CreateGroceryView: View {
             GroupListView(currentGroup: currentGroup)
             ScrollView(.vertical){
                 VStack(spacing: 20){
-                    ForEach($groceries) { grocery in
-                        CreateGroceryItemView(grocery:grocery){
-                            removeNewGrocery(grocery.id)
+                        ForEach($groceries) { grocery in
+                            CreateGroceryItemView(grocery:grocery){
+                                removeNewGrocery(grocery.id)
+                            }
                         }
-                    }
+                    
                     Button(action: addItem){
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.white)
@@ -52,14 +50,17 @@ struct CreateGroceryView: View {
                 }.padding()
             }
             CustomButtonView(width: .infinity, height: 40, text: "Add"){
-                Task{hideKeyboard()
+                hideKeyboard()
+                Task{
                     await createGroceries()
                     }
             }
-        }.padding().onTapGesture {
+        }.padding()
+            .onTapGesture {
             hideKeyboard()
         }
     }
+    
     
     func addItem(){
         groceries.append(newGrocery(id: IdCount, name: "", quantity: 1))
@@ -97,6 +98,3 @@ struct CreateGroceryView: View {
     }
 }
 
-#Preview {
-    CreateGroceryView().environmentObject(LoginUserViewModel())
-}

@@ -41,8 +41,8 @@ struct AuthorizedView: View {
                 Spacer()
             }
             case .profile: ProfileView()
-            case .chore: CreateChoreView()
             case .grocery: CreateGroceryView()
+            case .chore: CreateChoreView()
             case .createGroup : CreateGroupView()
             case .editGroup: EditGroupView()
             }
