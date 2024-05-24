@@ -44,7 +44,7 @@ struct AuthorizedView: View {
             case .grocery: CreateGroceryView{currentPage = .home}
             case .chore: CreateChoreView{currentPage = .home}
             case .createGroup : CreateGroupView{currentPage = .home}
-            case .editGroup: EditGroupView()
+            case .editGroup: EditGroupView{currentPage = .home}
             }
             AuthroizedTabView(currentPage:$currentPage)
         }.overlay{

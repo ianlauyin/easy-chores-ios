@@ -8,14 +8,16 @@ struct EditGroupView: View {
     @State var email :String = ""
     @StateObject var currentGroup = GroupViewModel()
     @State var memberList : [UserViewModel] = []
-    
+    var handleBack : ()->Void
     
     var body: some View {
         VStack{
             GroupListView(currentGroup: currentGroup)
-            TextField("Add user by email", text : $email).textFieldStyle(.roundedBorder)
-            CustomButtonView(width: .infinity, height: 40, text: "Add"){
-                Task{await handleAdd()}
+            if currentGroup.id != nil{
+                TextField("Add user by email", text : $email).textFieldStyle(.roundedBorder)
+                CustomButtonView(width: .infinity, height: 40, text: "Add"){
+                    Task{await handleAdd()}
+                }
             }
             VStack(alignment:.trailing){
                 Text("Group Members:")
@@ -69,6 +71,9 @@ struct EditGroupView: View {
                 _ = try await APIManager.request.delete(url: "/groups/\(groupId)/users/\(removeUserEmail)")
                 await updateUserList()
             }
+            if removeUserEmail == KeychainManager.keychain.userEmail{
+                handleBack()
+            }
             else{
                 throw CustomDataError.invalidGroupId
             }
@@ -78,6 +83,3 @@ struct EditGroupView: View {
     }
 }
 
-#Preview {
-    EditGroupView()
-}

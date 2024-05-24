@@ -100,7 +100,7 @@ struct CreateChoreView: View {
                 _ = try await APIManager.request.put(url: "/chores/\(choreId)/users", data: assignedUserIdData)
                 handleBack()
             }else{
-                throw CustomDataError.invalidGroupId
+                throw CustomDataError.error("Please create/join group first.")
             }
         }catch{
             errorManager.error = error

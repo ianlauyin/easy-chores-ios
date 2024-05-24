@@ -31,6 +31,7 @@ struct HomeView: View {
                         HomeGroceriesView(currentGroup:currentGroup)
                     }
                 }
+                Spacer()
             }else{
                 LoadingView()
             }

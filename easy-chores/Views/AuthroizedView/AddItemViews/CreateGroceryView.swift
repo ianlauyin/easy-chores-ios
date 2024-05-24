@@ -86,7 +86,7 @@ struct CreateGroceryView: View {
                     throw CustomDataError.invalidUserId
                 }
             }else{
-                throw CustomDataError.invalidGroupId
+                throw CustomDataError.error("Please create/join group first.")
             }
         }catch{
             errorManager.error = error
