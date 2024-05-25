@@ -9,18 +9,17 @@ struct ChoreItemView: View {
         RoundedRectangle(cornerRadius: 10)
             .fill(.white)
             .shadow(radius: 2, x:2, y:2)
-            .frame(width:144 ,height:115)
+            .frame(width:161 ,height:127)
             .overlay{
                 VStack(alignment:.leading,spacing:6){
                     Text(chore.title ?? "Title")
-                        .font(Font.custom("Poppins-Regular",size:12))
                         .bold()
                     VStack(alignment:.leading, spacing:2){
                         Text("Assigned to: \(chore.assignedUsers.joined(separator: ", "))")
                         Text("Date: \(chore.createdAt ?? "")")
                             
-                    }.font(Font.custom("Poppins-Regular",size:10))
-                    CustomButtonView(width:120, height: 27,text:"Done",fontSize: 10)
+                    }.font(Font.custom("Poppins-Regular",size:12))
+                    CustomButtonView(width: 145 ,height: 27,text:"Done",fontSize: 10)
                     {Task{ await removeChore() }}
                 }.padding(12)
             }

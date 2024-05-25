@@ -9,6 +9,7 @@ struct GroceryItemView: View {
         HStack{
             VStack(alignment:.leading,spacing: 3){
                 Text("\(grocery.name ?? "Grocery Name") x \(grocery.quantity ?? 1)")
+                    .font(Font.custom("Poppins-Regular",size:16))
                 HStack{
                     Text("Created by: \(grocery.creatorName ?? "")")
                         .frame(width:100,alignment:.leading)

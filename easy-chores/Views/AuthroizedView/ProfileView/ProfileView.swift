@@ -15,11 +15,17 @@ struct ProfileView: View {
             }.padding(15)
             VStack(alignment: .leading,spacing:4){
                 Text("User Name:")
-                Text(user.username ?? "abc").foregroundStyle(.customPrimary)
+                    .font(Font.custom("Poppins-Regular",size:18))
+                Text(user.username ?? "abc")
+                    .foregroundStyle(.customPrimary)
+                    .font(Font.custom("Poppins-Regular",size:16))
             }.padding(.horizontal,10)
             VStack(alignment: .leading,spacing:4){
                 Text("Email:")
-                Text(KeychainManager.keychain.userEmail ?? "abc@gmail.com").foregroundStyle(.customPrimary)
+                    .font(Font.custom("Poppins-Regular",size:18))
+                Text(KeychainManager.keychain.userEmail ?? "abc@gmail.com")
+                    .foregroundStyle(.customPrimary)
+                    .font(Font.custom("Poppins-Regular",size:16))
             }.padding(.horizontal,10)
             Spacer()
             LogoutButtonView()
@@ -27,6 +33,3 @@ struct ProfileView: View {
     }
 }
 
-#Preview {
-    ProfileView().environmentObject(LoginUserViewModel()).environment(\.font, Font.custom("Poppins-Regular",size:14))
-}
