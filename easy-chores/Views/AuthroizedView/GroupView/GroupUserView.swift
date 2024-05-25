@@ -7,16 +7,19 @@ struct GroupUserView: View {
     
     var body: some View {
         Capsule()
-            .fill(.white)
-            .stroke(.black, lineWidth: 1)
-            .frame(width:120,height:40)
+            .fill(.customAccent)
+            .frame(width:100,height:30)
             .overlay{
                 HStack{
                     Text(user.username ?? user.email ?? "Unknown user")
                     Button(action : onDelete){
                         Image(systemName:"xmark")
                     }
-                }
+                }.foregroundStyle(.white)
             }
     }
+}
+
+#Preview {
+    GroupUserView(user: UserViewModel(id:1,username:"Ian")){()}
 }
