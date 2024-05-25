@@ -8,29 +8,22 @@ struct CreateGroceryItemView: View {
     var onClick :()->Void
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .fill(.white)
-            .stroke(.gray)
-            .frame(height:46)
-            .overlay{
-                HStack{
-                    TextField("Grocery name",text:$grocery.name)
-                        .padding()
-                    Text("x")
-                    TextField("1",text: $quantity)
-                        .keyboardType(.decimalPad)
-                        .frame(width:50)
-                    Button(action:onClick){
-                        Image(systemName:"minus.square")
-                            .resizable().scaledToFit()
-                    }.padding()
-                        .foregroundStyle(.red)
-                        .frame(width:50,height:50)
-                        .ignoresSafeArea([])
-                }.onChange(of: quantity){
+        HStack(spacing:12){
+            CustomTextFieldView(input: $grocery.name, placeholder:"Grocery",width:200)
+            Text("x")
+            CustomTextFieldView(input: $quantity, placeholder: "1",width: 50)
+                .keyboardType(.decimalPad)
+                .onChange(of: quantity){
                     handleQuantityChange()
                 }
+            Spacer()
+            Button(action:onClick){
+                Image(systemName:"minus.square")
+                    .resizable().scaledToFit()
+                    .foregroundStyle(.red)
+                    .frame(width:30,height:30)
             }
+        }
     }
     func handleQuantityChange(){
         if quantity.count == 0{
